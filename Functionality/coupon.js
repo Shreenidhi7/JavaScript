@@ -20,4 +20,4 @@
 var read=require('readline-sync');
 
 var coupannumber=read.question("enter coupans needed? ");
-num.noofcoupans(coupannumber);//Invoking the Coupon function.
+num.generateCoupons(coupannumber);//Invoking the Coupon function.

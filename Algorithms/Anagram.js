@@ -22,4 +22,4 @@ var str2=input.question("enter string2");
 /**
  * Accepting the user inputs.
  */
-num.anagram1(str1,str2);//Invoking the Anagram function.
+num.findAnagram(str1,str2);//Invoking the Anagram function.

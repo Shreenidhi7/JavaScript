@@ -29,4 +29,4 @@ for(let i=0;i<=number;i++)
     var numbers=read.question("enter the elements");
     arr.push(numbers);
 }
-num.tripletfind(number,arr);//Invoking findtriplets function
+num.findTriplet(number,arr);//Invoking findtriplets function

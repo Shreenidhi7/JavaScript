@@ -23,4 +23,4 @@ var number=read.question("enter the number= ");
 /**
  * Taking the user input.
  */
-num.harmonic(number);
+num.findHarmonic(number);

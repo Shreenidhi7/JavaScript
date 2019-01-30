@@ -19,4 +19,4 @@ var num=require('../Utility/Utility');
  */
 var input=require('readline-sync');
 
-var result=num.conversion(input);//Invoking temperatureConversion function method.
+var result=num.tempConversion(input);//Invoking temperatureConversion function method.

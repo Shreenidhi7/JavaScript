@@ -559,6 +559,55 @@ module.exports = {
      },
 
 
+/***************************************************************************************
+     * 1.Permutations of a String.
+     *
+     * @description:Permutation of a String using iterative method and Recursion method.
+     * 
+     * @purpose :To find all permutation in the given string.
+     *  
+     * @function:Using iterative method to find all permutation in the string.
+     */
+    stringPermutations(string) 
+    {
+      try 
+      {
+          var results = [];
+          /**
+           * if string is a single character add the character to results and return results
+           */
+          if (string.length === 1) 
+          {
+              results.push(string);
+              return results;
+          }
+          /**
+           * for each char in string define innerPermutations as a char of string
+           * set innerPermutations to stringPermutations (without next char).
+           */
+          for (var i = 0; i < string.length; i++) 
+          {
+              var firstChar = string[i];
+              var charsLeft = string.substring(0, i) + string.substring(i + 1);
+              var innerPermutations = this.stringPermutations(charsLeft);
+              /**
+               * foreach string in innerPermutations add defined char and innerPermutations char
+               * return results
+               */
+              for (var j = 0; j < innerPermutations.length; j++) 
+              {
+                  results.push(firstChar + innerPermutations[j]);
+              }
+          }
+          return results;
+      } 
+      catch (error)
+       {
+          console.log("error.message");
+       }
+  },
+
+
 /*****************************************Algorithms********************************************** */
 
 

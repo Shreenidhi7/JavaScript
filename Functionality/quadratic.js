@@ -25,4 +25,4 @@ var c= read.question("enter value of c= ");
  * Taking the user input.
  */
 
-num.quad(a,b,c);//Invoking the Quadratic function.
+num.findQuadratic(a,b,c);//Invoking the Quadratic function.

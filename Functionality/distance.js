@@ -19,4 +19,4 @@ var num=require('../Utility/Utility');
  */
 var result1=process.argv[2];
 var result2=process.argv[3];
-num.euclidist(result1,result2);
+num.findEuclidistance(result1,result2);//Invoking the Distance function.
