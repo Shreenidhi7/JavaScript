@@ -25,7 +25,7 @@ var principal=process.argv[2];
 var year=process.argv[3];
 var rate=process.argv[4];
 
-var amount=num.payment(principal,year,rate)
+var amount=num.monthPayment(principal,year,rate)
 
 console.log(amount);//Invoking monthlyPayment function.
 

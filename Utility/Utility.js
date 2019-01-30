@@ -602,8 +602,8 @@ module.exports = {
             }
              if(str3==str4)
              {
-               console.log("the words are similar= "+str1+" "+str2);
-               // return true;
+              // console.log("the words are similar= "+str1+" "+str2);
+               return str3;
              }
          }
         else
@@ -618,6 +618,24 @@ module.exports = {
        }
     },   
   
+  
+    findPalindrome(str)
+    {
+      var str1="";
+
+    for(let i=0;i<=str.length-1;i++)
+      {
+        str1=str.charAt(i)+str1;
+        
+      }
+      console.log(str1);
+      if(str1==str)
+      {
+        return true;
+      }  
+      return false;
+    },
+
 
 /************************primeNumber************************ */
     /**
@@ -847,43 +865,55 @@ module.exports = {
  * 
  * @description :given an input and the value to be found using binary search
  * 
- * @puspose :To calculate the Square Root 
+ * @puspose :To covert integers into integers
  * 
- * @function : Using the given formulae evaluate the square root
+ * @function : function that outputs the binary(base 2) representation of the 
+ *              decimal number typed as input
  * 
  */    
     
-    
-      doBinarySearch(arr,words)
-      {
-          arr.sort();
-          var li=0;
-          var hi=arr.length-1;
-          var mi=Math.floor((li+hi)/2);
-
-          while(li<=hi)
+  doBinarySearch(arr,words)
+    {
+      arr.sort();
+      var li=0;
+      var hi=arr.length-1;
+      var mi=Math.floor((li+hi)/2);
+        while(li<=hi)
           {
-              if(arr[mi]===words)
-              {
-                  return true;
-
-              }
-              else if(arr[mi]<words)
+           if(arr[mi]===words)
+             {
+               return true;
+             }
+            else if(arr[mi]<words)
               {
                   li=mi+1
               }
-              else
-              {
-                  hi=mi-1;
-
+            else
+             {
+                 hi=mi-1;
               }
               //mi=(li+hi)/2;
               mi=Math.floor((li+hi)/2)
           }
           return false;
       },
-    
-    
+
+
+/*****************************Calculate Notes************************* */
+ /** 
+ *Taking the input from the user and given them the denomination of notes 
+ * 
+ * @description :Vending Machine calculates the minimun number of notes
+ *                as well as the notes to be returned by the Vending 
+ *                machine as a change
+ * 
+ * @puspose :To calculate the number of notes given for a given amount
+ * 
+ * @function : function to check for the largest value of the note to
+ *              return change to get to mininum number of notes.
+ * 
+ */    
+  
     calculateNotes(amount)
     {
         var notes=0;
@@ -904,7 +934,7 @@ module.exports = {
 
 
     
- /***********************toFindnumber****************************** */
+/***********************toFindnumber****************************** */
     /**
      * To find the number.
      * 
@@ -919,7 +949,7 @@ module.exports = {
     
     toFindNumber(low,high,input)
      {
-      var mid = low + Math.floor((high - low) / 2);
+      var mid = Math.floor((low + high)/2);
         var d;
          if (low < high)
           {
@@ -941,7 +971,183 @@ module.exports = {
           }
             return mid;
           },
+    
+ /***********************Convert Integer to Binary****************************** */
+    /**
+     * Takes an integer number and converts it to binary form
+     * 
+     * @description:Computes the binary representation of n,we consider the powers of 2
+     *              less than equal to n in descreasing order to determine which belong
+     *               in the binary decomposition
+     * 
+     * @purpose : To convert integer to binary
+     * 
+     * @function:Fuction that outputd the binary(base2) representation of the decimal
+     *            number typed as input
+     * 
+     */    
+          
+  toBinary(number)
+    {
+      var str="";
+      if(number==0)
+       {
+         return "enter number greater than 0"
+       }
+      while(number>0.9)
+       {
+        result= Math.floor(number%2);
+        str=result+str;
+        number=number/2;
+       } 
+        return str;
+},   
+ 
+/***********************Merge Sort****************************** */
+    /**
+     * 
+     * 
+     * @description:To Merge Sort an array,we divide it into two halves,sort the two 
+     *               halves independently and then merge to sort the full array
+     * 
+     * @purpose : To Sort an array
+     * 
+     * @function:mergesort divides the array into halves
+     *            and merges the divided array and gives the sorted elements
+     * 
+     */  
+
+
+mergeSort(arr)
+  { 
+   if(arr.length <= 1)
+      {
+        return arr;  
+      }
+     var mid=Math.floor(arr.length/2);
+     var left=arr.slice(0,mid);
+     var right=arr.slice(mid);
+     var left=this.mergeSort(left);
+     var right=this.mergeSort(right);
+    
+    return this.generateMerge(left,right);
+  },
+
+  generateMerge(left,right)
+    {
+    //console.log(left);
+    //console.log(right);
+      var result=[];
+      var li=0;
+      var ri=0;
+
+    while(li<left.length && ri<right.length)
+    {
+      if(left[li]>right[ri])
+      {
+        result.push(right[ri]);
+        ri++;
+      }
+      else
+      {
+        result.push(left[li]);
+        li++;
+       }
+     }
+    while(li<left.length)
+     {
+       result.push(left[li]);
+       li++;
+     }
+    while(ri<right.length)
+     {
+       result.push(right[ri]);
+       ri++;
+     }
+    return result;
+  },
+
+
+ /********************Anagram,Palindrome,Prime Number*********************
+   * 3.isAnagramPalindrome
+   * *************************
+   * @purpose : to find the numbers that are anagram and palindrome.
+   * @description : Extend 
+   */
+
+
+  isNumberPalindrome(num1) 
+    {
+       var str = "";
+       num1 = num1 + "";
+
+      for (let i = 0; i < num1.length; i++) 
+      {
+        str = num1.charAt(i) + str;
+       }
+          if (str == num1) 
+          {
+              return true;
+          }
+          return false;
+      },
+
+  AnagramPrime() 
+  {
+    console.log("Prime numbers in the range of 0 to 1000 which are anagram");
+      {
+        var arr = [];
+        for (let i = 0; i < 1000; i++) 
+          {
+            if(this.generatePrimeno(i))
+              {
+                arr.push(i);
+              }
+          }
+          for (let i = 0; i < arr.length; i++)
+           {
+              for (let j = i + 1; j < arr.length; j++) 
+              {
+                if (this.findAnagram(arr[i], arr[j]))
+                 {
+                    console.log(arr[i] + " and " + arr[j] + " are anagram");
+                      if (this.isNumberPalindrome(arr[i])) 
+                      {
+                        console.log(arr[i] + " is palindrome ");
+                      }
+                      if (this.isNumberPalindrome(arr[j]))
+                      {
+                        console.log(arr[j] + " is palindrome ");
+                       }
+                  }
+              }
+            }
+        }
+      },
+    
+    
+    
+    
+    
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
     
     
     
