@@ -38,13 +38,16 @@ module.exports = {
      *@function : It takes the userinput and print it with some sentence.
      */
 
-    replaceString(identity) 
+    replaceString(username) 
     {
         try
         {
-           if (identity.length > 2) 
+           if (username.length > 2) 
             {   
-                console.log("Hello " + identity + " how are you!!");
+              var str1="hello <<username>> how are you"
+              var output=str1.replace(/<<username>>/g,username);
+              console.log(output)
+                
             }
            else 
             {
@@ -687,7 +690,7 @@ module.exports = {
 
 /***********************insertionSort**************************/
     /**
-     * 1.Sorting the string. 
+     * Sorting the string. 
      * 
      * @description: In strings from standard input and prints them in sorted order.
      *                    Uses insertion sort.
@@ -838,7 +841,17 @@ module.exports = {
         console.log("square root of number is= "+temp);
       },
     
-    
+/*****************************Binary Search************************* */
+ /** 
+ * To Search the value given the user in the particular set of inputs 
+ * 
+ * @description :given an input and the value to be found using binary search
+ * 
+ * @puspose :To calculate the Square Root 
+ * 
+ * @function : Using the given formulae evaluate the square root
+ * 
+ */    
     
     
       doBinarySearch(arr,words)

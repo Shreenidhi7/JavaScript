@@ -20,8 +20,8 @@ var random=require('../Utility/Utility');
  * For accessing data from utility file.
  */
 var read=require('readline-sync');
-var identity=read.question("enter the name ");
+var username=read.question("enter the name ");
 /**
  * Taking the user input.
  */
-random.replaceString(identity);//Invoking the stringReplace function.
+random.replaceString(username);//Invoking the stringReplace function.
