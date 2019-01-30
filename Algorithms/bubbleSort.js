@@ -25,9 +25,9 @@ var i;
 
 for( i=0;i<size;i++)
 {
-    inputArray.push(input.question("enter elements"));
+    inputArray.push(input.questionInt("enter elements"));
 }
 console.log("before sorting")
 console.log(inputArray);
 //alert(inputArray(','));
-num.sortbubble(inputArray);//Invoking bubbleSort function.
+num.generateBubbleSort(inputArray);//Invoking bubbleSort function.

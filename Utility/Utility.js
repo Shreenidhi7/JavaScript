@@ -888,49 +888,55 @@ module.exports = {
         }
         console.log("total number of notes = "+notes);
     },
+
+
     
+ /***********************toFindnumber****************************** */
+    /**
+     * To find the number.
+     * 
+     * @description:takes a command-line argument N, asks you to think of a number between 0 and N-1,
+     *  where N = 2^n, and always guesses the answer with n questions.
+     * 
+     * @purpose : To find the number using Binary Search method.
+     * 
+     * @function:Use Binary Search to find the number
+     *           Print the intermediary number and the final answer.
+     */   
     
-    toFindNumber(low, high, input )
+    toFindNumber(low,high,input)
      {
-      try 
-        {
-          var mid = low + Math.floor((high - low) / 2);
-            var k;
-            if (low < high)
-             {
-                if (low == high - 1)
-                 {
-                   k = input.question("Is the number " + low + "If Yes press --> Yes " + "  " + "If No press No");
-                    if (k == 'Yes')
-                      return low;
-                    if (k == 'No')
-                      return high;
-                 }
-
-            k = input.question("Is the number in the range " + mid + "--" + high + "If Yes Press -->Yes " + " " + "If No Press--> No")
-
-                if (k == 'Yes')
-                    mid = this.toFindNumber(mid, high,input)
-                if (k == 'No')
-                    mid = this.toFindNumber(low, mid - 1, input);
-            }
-    
-            return mid;
-        
-        } 
-        catch (error) 
+      var mid = low + Math.floor((high - low) / 2);
+        var d;
+         if (low < high)
           {
-            console.log(error.message);
+           if (low == high - 1)
+             {
+              d = input.question("Is the number " + low + "If yes press --> yes " + "  " + "If no press no  ");
+               if (d == 'yes')
+                 return low;
+               if (d == 'no')
+                return high;
+             }
+
+            d = input.question("Is the number in the range " + mid + "--" + high + " If yes Press-->yes " + " " + "If no Press--> no  ");
+
+             if (d == 'yes')
+                mid = this.toFindNumber(mid, high,input)
+             if (d == 'no')
+                mid = this.toFindNumber(low, mid- 1,input);
           }
-    },
-    
-    
-    
-    
-    
-    
-    
+            return mid;
+          },
     }
+    
+    
+    
+    
+    
+    
+    
+    
   
   
   
