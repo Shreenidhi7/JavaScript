@@ -21,6 +21,6 @@ var input=require('readline-sync');
 var initial=input.question("enter input range= ");//for entering the initial value.
 var final=input.question("enter output range= ");//for entering the final value.
 
-var res=num.generatePrimeno(initial,final);//Invoking the isPrime function.
+var res=num.generatePrimeno(initial,final);//Invoking the generatePrimeno function.
 
 console.log(res);

@@ -7,8 +7,8 @@
  * 
  *
  *@file          :qudratic.js
- *@overview      :Qudractic takes the userinput and prints the roots of the equations.    
- *@author name   :Shreenidhi Sharma N <anushk136@gmail.com>
+ *@overview      :Qudratic takes the userinput and prints the roots of the equations.    
+ *@author name   :Shreenidhi Sharma N <shreenidhisharma7@gmial.com>
  *@version       :1.0
  *@since         :25/01/2019
  * 

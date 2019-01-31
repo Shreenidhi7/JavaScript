@@ -24,4 +24,4 @@ var input=require('readline-sync');
 
 var number=input.question("enter the number= ");// enter the number..
 
-var result=num.findSquareRoot(number);//Invoking temperatureConversion function method.
+var result=num.findSquareRoot(number);//Invoking findSquareRoot function method.

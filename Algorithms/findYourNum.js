@@ -23,4 +23,4 @@ var n=process.argv[2];//accepting the input from user in command line arguements
 
 var res=num.toFindNumber(0,n-1,input);
 
-console.log("the number is= "+res);//Invoking the Anagram function.
+console.log("the number is= "+res);//Invoking the toFindNumber function.

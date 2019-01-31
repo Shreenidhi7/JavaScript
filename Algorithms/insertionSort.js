@@ -29,4 +29,4 @@ for(let i=0;i<size;i++)
 console.log("before sorting");
 console.log(arr);
 
-num.generateInsertsort(arr);//Invoking bubbleSort function.
+num.generateInsertsort(arr);//Invoking insertionSort function.

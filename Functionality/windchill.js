@@ -1,7 +1,7 @@
 /***********************************************************
  *
  * Execution      :Default node    cmd>node windchill.js
- * Purpose        :To find the roots of the equations.
+ * Purpose        :To find the output using the formulae
  * 
  *@description 
  * 
@@ -36,4 +36,4 @@ if(!(speed<120 && speed>3))
     var speed=input.question("enter the speed");
 
 }
-num.findChillwind(temp,speed);//Invoking the windChill function.
+num.findWindChill(temp,speed);//Invoking the windChill function.

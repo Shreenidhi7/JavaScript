@@ -20,4 +20,4 @@ var read=require('readline-sync');
 
 var power =read.question("enter the exponent");
 
-num._2exponential(power);//Invoking the power function.
+num.findExponentialOf2(power);//Invoking the power function.

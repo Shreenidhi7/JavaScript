@@ -113,7 +113,7 @@ module.exports = {
      */
 
 
-    _2exponential(exponent) 
+    findExponentialOf2(exponent) 
     {
      try
        {
@@ -260,7 +260,7 @@ module.exports = {
      */    
 
 
-    Gambling(stake, goal, numberoftimes)
+    doGamble(stake, goal, numberoftimes)
      {
        try
        {
@@ -382,7 +382,7 @@ module.exports = {
      * @function:Find distinct triples (i, j, k) such that a[i] + a[j] + a[k] = 0.
      */
 
-  findTriplet(number,arr)
+  findTriplets(number,arr)
     {
       try
       {
@@ -544,7 +544,7 @@ module.exports = {
      */     
 
     
-    findChillwind(temp,speed)
+    findWindChill(temp,speed)
      {
        try
         {
@@ -559,7 +559,7 @@ module.exports = {
      },
 
 
-/***************************************************************************************
+/***************************String Permutations*************************************
      * 1.Permutations of a String.
      *
      * @description:Permutation of a String using iterative method and Recursion method.
@@ -573,27 +573,19 @@ module.exports = {
       try 
       {
           var results = [];
-          /**
-           * if string is a single character add the character to results and return results
-           */
+        
           if (string.length === 1) 
           {
               results.push(string);
               return results;
           }
-          /**
-           * for each char in string define innerPermutations as a char of string
-           * set innerPermutations to stringPermutations (without next char).
-           */
+
           for (var i = 0; i < string.length; i++) 
           {
               var firstChar = string[i];
               var charsLeft = string.substring(0, i) + string.substring(i + 1);
               var innerPermutations = this.stringPermutations(charsLeft);
-              /**
-               * foreach string in innerPermutations add defined char and innerPermutations char
-               * return results
-               */
+              
               for (var j = 0; j < innerPermutations.length; j++) 
               {
                   results.push(firstChar + innerPermutations[j]);
@@ -1049,10 +1041,14 @@ module.exports = {
         str=result+str;
         number=number/2;
        } 
+       while(str.length<8)
+       {
+          str = "0" + str;
+       }
         return str;
 },   
  
-/***********************Merge Sort****************************** */
+/*************************************Merge Sort****************************** */
     /**
      * 
      * 
@@ -1118,7 +1114,7 @@ mergeSort(arr)
 
 
  /********************Anagram,Palindrome,Prime Number*********************
-   * 3.isAnagramPalindrome
+   * isAnagramPalindrome
    * *************************
    * @purpose : to find the numbers that are anagram and palindrome.
    * @description : Extend 
@@ -1175,10 +1171,32 @@ mergeSort(arr)
       },
     
     
+/********************************* Binary Swap Nibble *****************************************/
+    /*  Binary Swap Nibble
+    *-------------------
+    * Purpose   : To swap half of the length of binary digits
+    *             
+    *
+    *  @description: To read an integer as an Input, convert to Binary using toBinary function and perform the following functions. 
+    *                   i.Swap nibbles and find the new number. 
+    *  @function:   The Decimal is converted into binary and the binary is swaped mid of its length
+    *               and the new swaped no is calculated
+    */
+
+   binarySwapNibble(num) 
+    {
+
+      var string=this.toBinary(num);
+      var str1=string.substring(0,4);
+      var str2=string.substring(4,string.length);
+      var result=str2+str1;
+      return result;
+    },
+
+}    
     
     
     
-    }
 
 
 

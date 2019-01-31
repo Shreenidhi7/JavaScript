@@ -27,4 +27,4 @@ var columns=read.question("enter number of columns");
  * Taking the user input to enter number of cols.
  */
 
-num.TwoDimensionalArray(rows,columns,read);//Invoking the creatArray function.
+num.TwoDimensionalArray(rows,columns,read);//Invoking the createArray function.

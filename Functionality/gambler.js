@@ -23,4 +23,4 @@ var stake=read.question("enter stake value= ");
 var goal=read.question("enter goal value= ");
 var numberoftimes=read.question("enter nor of times=");
 
-num.Gambling(stake,goal,numberoftimes);//Invoking gambler function.
+num.doGamble(stake,goal,numberoftimes);//Invoking gambler function.
