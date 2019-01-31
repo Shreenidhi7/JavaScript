@@ -644,13 +644,14 @@ module.exports = {
              if(str3==str4)
              {
               // console.log("the words are similar= "+str1+" "+str2);
-               return str3;
+               return true;
+        
              }
          }
         else
           {
-            console.log("the words are not similar= "+str1+" "+str2);
-            //return false;
+           // console.log("the words are not similar= "+str1+" "+str2);
+            return false;
           }
        }
       catch(err)
@@ -659,7 +660,56 @@ module.exports = {
        }
     },   
   
-  
+    isAnagram(s, s1) {
+      try {
+          var format = /[a-zA-Z0-9]/;
+          var result;
+          /**
+           * Condition to check if the input is only charcter.
+           */
+          if (format.test(s) && format.test(s1)) {
+              /**
+               * Condition to check the length of the first word and seconf=d word is same.
+               */
+              if (s.length !== s1.length) {
+                  result = false;
+              }
+              /**
+               * Split the string into an array
+               * Sort the array alphabetically.
+               * join the elements of an array into string and store the sorted string in a string.
+               */
+              var sort1 = s.toString().split("").sort().join("");
+              var sort2 = s1.toString().split("").sort().join("");
+              /**
+               * If sort1 and sort2 string is equal store true in result .
+               * 
+               */
+              result = sort1 === sort2;
+              /**
+               * If condition check the result is true and print ig give word is anagram.
+               */
+              if (result == true) {
+                  return true;
+
+              }
+              else {
+                  return false;
+              }
+          }
+          else {
+              console.log("Enter only letters or alphabets only");
+
+          }
+
+      }
+
+      catch (error) {
+          console.log(error.message);
+
+      }
+  },
+
     findPalindrome(str)
     {
       var str1="";
@@ -689,7 +739,7 @@ module.exports = {
      * @function:To find the prime numbers in the given range using loop condition.
      */
 
-    generatePrimeno(initial,final)
+    isPrime(initial,final)
       {
         var primenumbers="";
          
@@ -711,9 +761,22 @@ module.exports = {
             return primenumbers;   
       },
      
+      isPrime(num)
+      {
+        if(num == 0 || num == 1)
+          return false;
+         
+        for(let i=2;i<num;i++)
+         {
+           if(num% i == 0)
+            return false;
+          }
+          return true;
+        },
+
 /*********************bubbleSort********************** */
     /**
-     * 1.Sorting the integers using bubble sorted method.
+     * Sorting the integers using bubble sorted method.
      * 
      * @description:Reads in integers prints them in sorted order using Bubble Sort.
      * 
@@ -1144,7 +1207,7 @@ mergeSort(arr)
         var arr = [];
         for (let i = 0; i < 1000; i++) 
           {
-            if(this.generatePrimeno(i))
+            if(this.isPrime(i))
               {
                 arr.push(i);
               }
@@ -1153,7 +1216,7 @@ mergeSort(arr)
            {
               for (let j = i + 1; j < arr.length; j++) 
               {
-                if (this.findAnagram(arr[i], arr[j]))
+                if (this.isAnagram(arr[i], arr[j]))
                  {
                     console.log(arr[i] + " and " + arr[j] + " are anagram");
                       if (this.isNumberPalindrome(arr[i])) 
