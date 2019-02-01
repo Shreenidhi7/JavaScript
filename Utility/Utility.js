@@ -13,10 +13,8 @@
  *@since         :24/01/2019
  * 
  ***********************************************************/
-//const readline = require('readline-sync');
-
-
-module.exports = {
+ //const readline = require('readline-sync');
+ module.exports = {
  /**
     * 
      * 
@@ -24,6 +22,25 @@ module.exports = {
      * 
      */
 
+      fileRead()
+      {
+        var fileStream=require('fs');
+        var f=fileStream.readFileSync('shri.txt','utf8');
+        var arr=f.split(' ');
+        return arr;
+      },
+
+      fileWrite(fileName,data)
+      {
+        const fs=require('fs');
+        fs.writeFile(fileName,data,function(err) {
+          if(err)
+          {
+            return console.log(err);
+          }
+        });
+      },
+      
      /***** String replace *****/
     /*
      * username with minimum 3 characters and not a number 
@@ -1256,7 +1273,30 @@ mergeSort(arr)
       return result;
     },
 
-}    
+
+ 
+/*filecall()
+ {
+    var input=require('readline-sync');
+    var M=input.question("enter the word to be searched= ");
+    var file=require('fs');
+    var arr=[];
+    file.readFile('shri.txt',(err,data)=>
+    {
+        if(err)
+        throw err;
+        arr=data.toString().split(" ");
+      console.log("dfd")
+ 
+       })
+      }
+      */
+  } 
+
+
+
+
+  
     
     
     
