@@ -20,40 +20,36 @@ console.log(result);
 l.remove("bcd");
 l.print();
 */
-
+var num=require('../Utility/Utility');
 var access=require('../Utility/UtilDataStructures');
-var M=require('../Utility/Utility');
+
 var read=require('readline-sync');
 var word=read.question("enter word to be searched in file:")
 
 
-var arr=M.fileRead();
-var l=new access.LinkedList;
+var arr=num.fileRead("shri.txt");
+
+var l=new access.LinkedList();
+
 for(let i=0;i<arr.length;i++)
-{
-    console.log(arr[i])
-    //l=l+''+i;
-    //console.log(l);
-   l.add(arr[i])
- 
-console.log(l+" in main")
-}
+    {
+     l.add(arr[i]);
+    }
 
 
 var found=l.search(word);
-//console.log(found)
 if(found==true)
 {
     l.remove(word);
     var output=l.print();
-    M.fileWrite('shri.txt',output);
+    num.fileWrite('shri.txt',output);
     console.log(output)
 }
 else
 {
     l.add(word)
     var out=l.print();
-    M.fileWrite('shri.txt',out);
+    num.fileWrite('shri.txt',out);
     console.log(out)
 }
 

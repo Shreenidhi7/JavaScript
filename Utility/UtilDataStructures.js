@@ -1,21 +1,4 @@
-/***********************************************************
- *
- * Execution     :Default node      cmd>node filename.js
- * Purpose       :To deploy all the business logic.
- * 
- *@description 
- * 
- *
- *@file          :UtilDataStructures.js
- *@overview      :All the business logic are coded here.
- *@author name   :Shreenidhi Sharma N <shreenidhisharma7@gmail.com>
- *@version       :1.0
- *@since         :31/01/2019
- * 
- ***********************************************************/
-
 /*
-
  var T=require('util')
 var req = require('util');
 var Utility = require('../Utility/Utility');
@@ -27,137 +10,7 @@ var Utility = require('../Utility/Utility');
     }
 
 }
-*/
-/*
-class Node
-{
-    constructor(data)
-    {
-        this.data=data;
-        this.next=null;
-    }
-}
-
-
-
-class LinkedList
-{
-    constructor()
-    {
-        this.head=null;
-        this.size=0;
-
-    }
-
-
- add(data)
-  {
-    var node=new Node(data);
-    if(this.head==null)
-      {
-        this.head=node;
-       // this.size++;
-      }
-    else
-      {
-        var temp=this.head;
-        while(temp.next)
-          {
-            temp=temp.next;
-          }
-        temp.next=node;
-      }
-    this.size++
-  }   
-
-
- print()
-  {
-    var str="";
-    var temp=this.head;
-    while(temp)
-      {  
-        str=str+" "+temp.data;
-        temp=temp.next;
-      }
-    console.log(str);
-    //return str;
-  }
-
- getSize()
-   {
-     return this.size;
-   }
-
-  addpos(arr,num)
-   {
-     console.log(num+"in addpos");
-
-     for(let i=0;i<arr.length-1;i++)
-       {
-         if(arr[0]>=num)
-          {
-            return 0;
-          } 
-        else if (arr[i]<num && arr[i+1]>num)
-           {
-            return i+1;
-           }
-       }
-    return arr.length;
-  }
-
- insertFirst(element)
-   {
-     var node=new Node(element);
-     if(this.head==null)
-       {
-        this.head=node;
-        this.size++;
-        return;
-       }
-     else
-      {
-      node.next=this.head;
-      this.head=node;
-      this.size++;
-      return;
-      }
-   }
-
-
-remove(data)
-{
-    var temp=this.head;
-    var t=null;
-    while(temp!=null)
-    {
-        if(temp.data==data)
-        {
-            if(t==null)
-            {
-                this.head=temp.next
-            }
-            else
-            {
-                t.next=temp.next;
-            }
-            this.size--;
-            return temp.data;
-        }
-        t=temp;
-        temp=temp.next;
-    }
-    return-1;
-}
-
-}
-module.exports={Node,LinkedList};
-*/
-
-
-
-/***********************************************************
+*//***********************************************************
  *
  * Execution     :Default node      cmd>node filename.js
  * Purpose       :To deploy all the business logic.
@@ -344,9 +197,9 @@ class LinkedList
   }
 */
 
-  insertAt(number,position)
+  insertAt(number,index)
    {
-     if(index>0 && index>this.size)
+     if(index<0 || index>this.size)
       {
        return false;
       }
@@ -354,31 +207,29 @@ class LinkedList
       {
        var node=new Node(number);
        var curr,prev;
-       curr=this.head;
 
        if(index==0)
         {
-          node.next=this.head;
+          curr=this.head;
           this.head=node;
+          node.next=temp;
+
+          return true;
         }
         else
         {
           curr=this.head;
           var it=0;
 
-        while(it<index)
-        {
-          it++;
+         while(it<index)
+          {
+           it++;
           prev=curr;
           curr=curr.next;
         }
-        node.next=curr;
-        it++;
-        prev=curr;
-        curr=curr.next;
-      }
       node.next=curr;
       prev.next=node;
+      }
     }
     this.size++;
   }
@@ -468,7 +319,7 @@ class LinkedList
       }
     }
 
-/**************************************************************************************** */
+/****************************Banking Cash Counter*************************************** */
 
 class Queue
 {
@@ -478,19 +329,19 @@ class Queue
     this.size=0;
     this.front=null;
   }
-push(data)
-{
-  if(this.isEmpty())
+ push(data)
   {
+   if(this.isEmpty())
+    {
     var node=new Node(data);
-    this.top.next=node;
+    this.top=node;
     this.size++;
     return;
-   }
-   var node=new Node(data);
-   this.top.next=node;
-   this.top=node;
-   this.siz++;
+    }
+    var node=new Node(data);
+    this.top.next=node;
+    this.top=node;
+    this.size++;
   }
 
   pop()
@@ -502,7 +353,7 @@ push(data)
     }
     var dat=this.front.data;
     this.front=this.front.next;
-    this.size++;
+    this.size--;
     return dat;
   }
 
@@ -547,16 +398,245 @@ push(data)
         {
           return false;
         }
-        getsize()
+      
+        getSize()
         {
           return this.size;
         }
       }
+    }
+   
+  /*
+   class Queue
+   {
+     constructor()
+     {
+       this.item=[];
+       this.size=0;
+       this.capacity;
+       this.front=-1;
+       this.rear=-1;
+      }
+
+      stack(capacity)
+    {
+      this.capacity=capacity;
+      var t= new  items[capacity];
+    }
+    enque(data)
+    {
+      console.log(data)
+      {
+        if(this.top == this.capacity-1)
+        {
+          console.log("Stack Overflow")
+          return;
+        }
+        if(this.front== -1)
+        {
+          this.front++;
+        }
+        this.size++;
+        this.items[++this.rear]= data;
+      }
+    }
+    deque()
+    {
+      if(this.front== -1)
+      {
+        return null;
+      }
+      var ele=this.items[this.front++];
+      console.log(this.front)
+      this.size--;
+      if(this.front>this.rear)
+      {
+        this.front=this.rear=-1;
+      }
+      return
+    }
+
+
+    getSize()
+    {
+      return this.size;
+    }
+
+    isEmpty()
+    {
+      if(size==0)
+      return true;
+      else
+      return false;
+    }
+
+
+    display()
+    {
+      var res="";
+      for(var i=this.front;i<=this.rear;i++)
+      {
+        var res=res+this.items[i];
+        if(i<this.rear)
+        {
+          res=res+"";
+        }
+      }
+      return res;
+    }
+
+
+
+
+*/
+
+/***************************************************************************************** */
+
+/*
+class Queue
+{
+  constructor()
+   {
+    this.items=[];
    }
-      
+
+  enqueue(data)
+   {
+    this.items.push(data);
+   }
+
+  dequeue()
+   {
+    if(this.isEmpty())
+     {
+      return "Underflow";
+      return this.items.shift();
+     }
+   }
+
+  isEmpty()
+   {
+    return this.items.length==0;
+   }
+
+  printList()
+   {
+    var str="";
+    for(var i=0;i<this.items.length;i++)
+     {  
+      str=str+this.items[i]+" ";
+      return str;
+     }
+   }
+}
+*/
+
+class Dequeue
+{
+constructor()
+{
+  this.front=-1;
+  this.size=0;
+  this.back=0;
+  this.head=null;
+}
+addFront(data)
+{
+  var n=new Node(data);
+  if(this.head==null)
+  {
+    this.head=n;
+    this.size++;
+  }
+  else
+  {
+    var temp=this.head;
+    while(temp.next)
+    {
+      temp=temp.next;
+    }
+    temp.next=n;
+    this.size++;
+  }
+}
+
+removeFront()
+{
+  if(this.head==null)
+  {
+    console.log("Stack Underflow");
+    return null;
+  }
+  else
+  {
+    var temp=this.head;
+    var data=temp.data;
+    this.head=temp.next;
+    this.size--;
+    return data;
+  }
+}
+  
+
+removeRear()
+{
+  if(this.head==null)
+  {
+    console.log("Stack Underflow");
+    return null;
+  }
+  var curr=this.head;
+  var pre=this.head;
+
+  if(curr.next==null)
+  {
+    this.head=null;
+    return curr.data;
+  }
+  while(curr.next)
+  {
+    pre=curr;
+    curr=curr.next;
+  }
+  var data=curr.data;
+  pre.next=null;
+  this.size--;
+  return data;
+}
+
+print()
+{
+  var st=" ";
+  var temp=this.head;
+ // while(temp)
+  {
+    console.log(temp.data)
+    st=st+""+temp.data;
+    temp=temp.next;
+  }
+  return st;
+}
+
+
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
   
 
 
@@ -565,10 +645,16 @@ push(data)
 
 
 
+  
+module.exports = { LinkedList, Node, Stack,Queue,Dequeue,
 
-
-
-
-
-
-module.exports = { LinkedList, Node, Stack,Queue }
+getBinaryTree(num)
+{
+  var fact=1;
+  for(let i=1;i<=num;i++)
+  {
+    fact=fact*i;
+  }
+  return fact;
+}
+}

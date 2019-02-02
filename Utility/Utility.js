@@ -22,10 +22,10 @@
      * 
      */
 
-      fileRead()
+      fileRead(file)
       {
         var fileStream=require('fs');
-        var f=fileStream.readFileSync('shri.txt','utf8');
+        var f=fileStream.readFileSync(file,'utf8');
         var arr=f.split(' ');
         return arr;
       },

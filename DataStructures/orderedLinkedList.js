@@ -1,22 +1,21 @@
 var readline=require('readline-sync');
-
 var access=require('../Utility/Utility');
-
 var accessDs=require('../Utility/UtilDataStructures');
 
-var arr1=access.fileRead();
-var arr=[];
+var arr1=access.fileRead("nidhi.txt");
+/* var arr=[];
 for(let i=0;i<arr1.length;i++)
 {
     arr[i]=parseInt(arr1[i])
-}
-access.mergeSort(arr)
+} */ 
+access.mergeSort(arr1);
+console.log(arr1);
 
 var linkedlist= new accessDs.LinkedList();
 
 for(let i=0;i<arr1.length;i++)
 {
-    linkedlist.add(arr[i]);
+    linkedlist.add(arr1[i]);
 }
 
 var contents=linkedlist.print();
@@ -24,17 +23,18 @@ console.log("data in list: "+contents);
 var valid=false;
 
 do
- {
-  var number=readline.question("enter the number: ");
-    if(isNaN(number))
-     {
-       console.log("not a valid entry,enter only numbers")
-     }
-    else
-     {
-    valid=true;
-     }
+{
+var number=readline.question("enter the number: ")
+if(isNaN(number))
+{
+    console.log("not a valid entry,enter only numbers")
 }
+else
+  {
+    valid=true;
+  }
+}
+
 while(!valid);
 
 var result=linkedlist.search(number);
