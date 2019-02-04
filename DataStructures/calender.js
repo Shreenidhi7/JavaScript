@@ -1,5 +1,5 @@
-var access = require('../Utility/calender')
-var M = require('../Utility/Utility');
+var calender = require('../Utility/calender')
+var Utility = require('../Utility/Utility');
 var T = require('util')
 
 function call() 
@@ -10,10 +10,12 @@ function call()
     var week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     var dates = [0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31];
    
-    var day = access.day(month,1,year);
-    console.log(day);
-    var leap = access.leapYear(year);
-    if (leap = true) 
+    var day = calender.day(month,1,year);
+    //console.log(day);
+    var leap = calender.leapYear(year);
+    console.log("month=>"+month+" year=>"+year);
+    console.log()
+    if (leap == true) 
       {
         dates[2] = 29;
       }

@@ -25,7 +25,7 @@ var Utility = require('../Utility/Utility');
  *@since         :31/01/2019
  * 
  ***********************************************************/
-var Utility = require('../Utility/Utility');
+var Utility = require('./Utility');
 class Node 
 {
 
@@ -306,18 +306,20 @@ class LinkedList
           {
               return this.item(top);
           }
+        }
   
-       print()
+       display()
         {
           var str="";
           for(let i=0;i<this.size;i++)
             {
-              str=str+" "+item[i];
-                return str;
+              str=str+" "+this.item[i];
+                
             }
+            return str;
         }
       }
-    }
+    
 
 /****************************Banking Cash Counter*************************************** */
 
@@ -325,6 +327,7 @@ class Queue
 {
   constructor()
   {
+    this.items=[];
     this.top=null;
     this.size=0;
     this.front=null;
@@ -349,12 +352,12 @@ class Queue
     if(this.isEmpty())
     {
       console.log("no elements found");
-      return;
+      return this.items.shift();
     }
-    var dat=this.front.data;
+    /*var dat=this.front.data;
     this.front=this.front.next;
     this.size--;
-    return dat;
+    return dat;*/
   }
 
   peek()
@@ -530,150 +533,187 @@ class Queue
    }
 }
 */
-
+/*********************************************************************************8
+ */
 class Dequeue
-{
-constructor()
-{
-  this.front=-1;
-  this.size=0;
-  this.back=0;
-  this.head=null;
-}
-addFront(data)
-{
-  var n=new Node(data);
-  if(this.head==null)
+ {
+  constructor()
   {
-    this.head=n;
-    this.size++;
+    this.front=-1;
+    this.size=0;
+    this.back=0;
+    this.head=null;
   }
-  else
+
+ addFront(data)
   {
-    var temp=this.head;
-    while(temp.next)
+    var n=new Node(data);
+    if(this.head==null)
     {
-      temp=temp.next;
+      this.head=n;
+      this.size++;
     }
-    temp.next=n;
-    this.size++;
+    else
+    {
+     var temp=this.head;
+     while(temp.next)
+      {
+        temp=temp.next;
+      }
+      temp.next=n;
+      this.size++;
+    }
   }
-}
 
 removeFront()
-{
-  if(this.head==null)
   {
-    console.log("Stack Underflow");
-    return null;
+    if(this.head==null)
+    {
+      console.log("Stack Underflow");
+      return null;
+    }
+    else
+    {
+      var temp=this.head;
+      var data=temp.data;
+      this.head=temp.next;
+      this.size--;
+      return data;
+    }
   }
-  else
-  {
-    var temp=this.head;
-    var data=temp.data;
-    this.head=temp.next;
-    this.size--;
-    return data;
-  }
-}
   
 
 removeRear()
-{
-  if(this.head==null)
   {
-    console.log("Stack Underflow");
-    return null;
-  }
-  var curr=this.head;
-  var pre=this.head;
+    if(this.head==null)
+    {
+      console.log("Stack Underflow");
+      return null;
+    }
+    var curr=this.head;
+    var pre=this.head;
 
-  if(curr.next==null)
-  {
-    this.head=null;
-    return curr.data;
+    if(curr.next==null)
+     {
+      this.head=null;
+      return curr.data;
+     }
+    while(curr.next)
+    {
+      pre=curr;
+      curr=curr.next;
+    }
+    var data=curr.data;
+    pre.next=null;
+    this.size--;
+    return data;
   }
-  while(curr.next)
-  {
-    pre=curr;
-    curr=curr.next;
-  }
-  var data=curr.data;
-  pre.next=null;
-  this.size--;
-  return data;
-}
 
-print()
-{
-  var st=" ";
-  var temp=this.head;
+  print()
+  {
+    var st=" ";
+    var temp=this.head;
  // while(temp)
-  {
-    console.log(temp.data)
-    st=st+""+temp.data;
-    temp=temp.next;
+    {
+      console.log(temp.data)
+      st=st+""+temp.data;
+      temp=temp.next;
+    }
+    return st;
   }
-  return st;
-}
 
 
-}
-
-
-var utility = require('../Utility/utility')
-module.exports={
-   day(m,d,y)
-   {
-    var v = Math.floor((14 - m) / 12)
-    var y0 = y - v
-    var x = y0 + Math.floor(y0 / 4) - Math.floor(y0 / 100) + Math.floor(y0 / 400)
-    var m0 = m + 12 * Math.floor((14 - m) / 12) - 2
-    var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7
-    d0 = Math.floor(d0)
-    return d0;
-   },
-   leapYear(year)
-   {
-    if  ((year % 4 == 0) && (year % 100 != 0)) return true;
-        if  (year % 400 == 0) return true;
-        return false;
-   },
-
-    monthof(month) {
-
-        switch (month) {
-            case 1: return 31;
-                break;
-            case 2: return 28;
-                break;
-            case 3: return 31;
-                break;
-            case 4: return 30;
-                break;
-            case 5: return 31;
-                break;
-            case 6: return 30;
-                break;
-            case 7: return 31;
-                break;
-            case 8: return 31;
-                break;
-            case 9: return 30;
-                break;
-            case 10: return 31;
-                break;
-            case 11: return 30;
-                break;
-            case 12: return 31;
-break;
-        }
+  palindrome(word)
+  {
+    for(let i=0;i<arr.length;i++)
+    {
+      Dequeue.addFront(arr[i]);
+    }
+    var l=word.length/2;
+    var m=Math.floor(1);
+    var c=0;
+    while(c!=m)
+    {
+      if(Dequeue.removeRear!=Dequeue.removeFront)
+      return false;
+      c++;
+    }
+    return true;
+  }
 }
 
 
 
 
 
+class LinkedListQueue {
+  constructor() {
+      this.tail = null;
+      this.head = null;
+  }
+  /**
+   * To add an element into the rear of the queue.
+   * @param {any} item
+   */
+  enQueue(item) {
+      /**
+       * Create a node by passing the item
+       */
+      let node = new Node(item);
+      /**
+       * If there are no head and tail, point the data to head and tail
+       */
+      if (!this.head) {
+          this.head = node;
+          this.tail = node;
+      } else {
+          /**
+           * We just move the tail pointer
+           */
+          this.tail.next = node;
+          this.tail = node;
+      }
+  }
+  /**
+   * To remove an item from the queue.
+   */
+  deQueue() {
+      if (!this.head) {
+          return "No item";
+      } else {
+          let itemToPop = this.head;
+          this.head = this.head.next;
+          return itemToPop;
+      }
+  }
+  /**
+   *return true if the queue is empty.
+   */
+  isEmpty() {
+      return this.size() < 1;
+  }
+  /**
+   * Returns the size of the queue
+   */
+  size() {
+      let current = this.head;
+      let counter = 0;
+      while (current) {
+          counter++;
+          current = current.next;
+      }
+      return counter;
+  }
+  printList() {
+      var st = ""
+      var temp = this.head
+      while (temp) {
+          //console.log(temp.data)
+          st = st + " " + temp.data
+          temp = temp.next
+      }
+      return st;
+  }
 }
 
 
@@ -683,7 +723,6 @@ break;
 
 
 
-   
   
 
 
@@ -698,6 +737,7 @@ module.exports = { LinkedList,
   Stack, 
   Queue, 
   Dequeue,
+  LinkedListQueue, 
 
 getBinaryTree(num)
 {
@@ -707,5 +747,77 @@ getBinaryTree(num)
     fact=fact*i;
   }
   return fact;
+},
+
+
+isPrime(initial,final)
+{
+var flag=0;
+k=0;
+var prime=[];
+
+for(var index1=initial;index1<=final;index1++)
+{
+  for(var index2=2;index2<index1;index2++)
+  {
+    if(index1%index2==0)
+    {
+      flag=0;
+      break;
+    }
+    else
+    {
+      flag=1;
+    }
+  }
+  if(flag==1)
+  {
+    prime[k++]=index1;
+  }
 }
+return prime;
+},
+
+
+
+
+findAnaPrime(initial,final)
+{
+  var primes=this.isPrime(initial,final);
+  var n=primes.length;
+
+  var anaPrimes=[];
+  var h=0;
+
+  for(let index1=0;index1<n-1;index1++)
+  {
+    for(let index2=index1+1;index2<n-1;index2++)
+    {
+      if(algoutil.isanagarm(primes[index1],primes[index2]))
+      {
+        anaPrimes[h++]==primes[index1];
+        anaPrimes[h++]==primes[index2];
+      }
+    }
+  }
+  return anaPrimes;
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

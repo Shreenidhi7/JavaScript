@@ -1,22 +1,24 @@
 var readline=require('readline-sync');
-var access=require('../Utility/Utility');
-var accessDs=require('../Utility/UtilDataStructures');
+var Utility=require('../Utility/Utility');
+var UtilityDS=require('../Utility/UtilityDS');
+var arr=Utility.fileRead("nidhi.txt");
+ var arr1=[];
 
-var arr1=access.fileRead("nidhi.txt");
-/* var arr=[];
-for(let i=0;i<arr1.length;i++)
+for(let i=0;i<arr.length;i++)
 {
-    arr[i]=parseInt(arr1[i])
-} */ 
-access.mergeSort(arr1);
+    arr1[i]=Number(arr[i]);
+
+} 
+Utility.mergeSort(arr1);
 console.log(arr1);
 
-var linkedlist= new accessDs.LinkedList();
+var linkedlist= new UtilityDS.LinkedList();
 
 for(let i=0;i<arr1.length;i++)
 {
     linkedlist.add(arr1[i]);
 }
+//console.log(linkedlist);
 
 var contents=linkedlist.print();
 console.log("data in list: "+contents);
@@ -27,7 +29,7 @@ do
 var number=readline.question("enter the number: ")
 if(isNaN(number))
 {
-    console.log("not a valid entry,enter only numbers")
+    console.log("not a valid entry,enter only numbers");
 }
 else
   {
@@ -45,17 +47,17 @@ if(result === true)
     console.log(linkedlist.remove(number));
 
     var output=linkedlist.print();
-    access.fileWrite('nidhi.txt',output)
-    console.log("removed the number from the list since its already present");
-    console.log("new data: "+output);
+    Utility.fileWrite('nidhi.txt',output)
+  //  console.log("remove the number from the list since its already present");
+    console.log("new data is: "+output);
 }
 else
 {
-    var position=linkedlist.addpos(arr,number);
+    var position=linkedlist.addpos(arr1,number);
     linkedlist.insertAt(number,position);
     var output1=linkedlist.print();
 
-    access.fileWrite('nidhi.txt',output1);
+    Utility.fileWrite('nidhi.txt',output1);
     console.log("word added successfully");
     console.log("new data"+ output1);
 }

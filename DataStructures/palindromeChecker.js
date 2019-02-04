@@ -1,29 +1,32 @@
-var D=require('../Utility/UtilDataStructures');
-var d=new D.Dequeue;
+var UtilityDS=require('../Utility/UtilityDS');
+var Dequeue=new UtilityDS.Dequeue;
 var read=require('readline-sync');
 var word=read.question("enter the word:");
 var arr=word.split(" ");
-
-for(let i=0;i<arr.length;i++)
-  {
-    d.addFront(arr[i])
-  }
-var st=" ";
- for(let i=0;i<arr.length;i++)
-  {
-    st=st+d.removeFront();
-  }
-for(let i=0;i<arr.length;i++)
-  {
-    d.addFront(arr[i])
-  }
-  
 var st1=" ";
 for(let i=0;i<arr.length;i++)
   {
-    st1=st1+d.removeRear();
+    Dequeue.addFront(arr[i])
   }
- if(st==st1)
+/*var st=" ";
+ for(let i=0;i<arr.length;i++)
+  {
+    st=st+Dequeue.removeFront();
+  }
+for(let i=0;i<arr.length;i++)
+  {
+    Dequeue.addRear(arr[i])
+  }
+  */
+
+for(let i=0;i<arr.length;i++)
+  {
+    st1=st1+Dequeue.removeFront();
+  }
+  console.log(st1);
+ // console.log(st);
+  
+ if(word == st1)
   {
     console.log("word is palindrome");
   }
