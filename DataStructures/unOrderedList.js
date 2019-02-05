@@ -1,35 +1,14 @@
-/*var num=require('../Utility/UtilDataStructures');
-var l=new num.LinkedList();
-l.add("abc");
-l.add("bcd");
-l.add("cde");  
-//console.log(l);
-l.print();
-//console.log(l);
-var res=l.getSize();
-console.log(res);
 
-//var arr=[];
-//l.addpos(arr,2);
-
-var result=l.insertFirst(1);
-console.log(result);
-
-//console.log(arr.length)
-
-l.remove("bcd");
-l.print();
-*/
-var num=require('../Utility/Utility');
-var access=require('../Utility/UtilDataStructures');
+var Utility=require('../Utility/Utility');
+var UtilityDS=require('../Utility/UtilityDS');
 
 var read=require('readline-sync');
 var word=read.question("enter word to be searched in file:")
 
 
-var arr=num.fileRead("shri.txt");
+var arr=Utility.fileRead("shri.txt");
 
-var l=new access.LinkedList();
+var l=new UtilityDS.LinkedList();
 
 for(let i=0;i<arr.length;i++)
     {
@@ -42,14 +21,14 @@ if(found==true)
 {
     l.remove(word);
     var output=l.print();
-    num.fileWrite('shri.txt',output);
+    Utility.fileWrite('shri.txt',output);
     console.log(output)
 }
 else
 {
     l.add(word)
     var out=l.print();
-    num.fileWrite('shri.txt',out);
+    Utility.fileWrite('shri.txt',out);
     console.log(out)
 }
 

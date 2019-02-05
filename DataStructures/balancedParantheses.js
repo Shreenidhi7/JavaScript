@@ -1,10 +1,10 @@
-var access=require('../Utility/UtilDataStructures');
+var UtilityDs=require('../Utility/UtilityDS');
 //var M=require('../Utility/Utility');
 var read=require('readline-sync');
 
  function Stack()
  {
-     var St=new access.Stack;
+     var St=new UtilityDs.Stack;
      var str=read.question("enter mathematical expression with para");
     var ch,i;
 

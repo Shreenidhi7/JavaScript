@@ -558,57 +558,68 @@
      * *********************************************************************************************/
 
 
-    intializeGame() {
+    intializeGame() 
+    {
       var game = [];
-      for (let i = 0; i <= 2; i++) {
+      for (let i = 0; i <= 2; i++)
+       {
           game.push([]);
           for (let j = 0; j <= 2; j++)
               game[i][j] = '-';
-      }
+        }
       return game;
-  },
+    },
 
-  random() {
+  random() 
+    {
       var value = Math.floor(Math.random() * 3);
       console.log(value + 1);
       return value;
-  },
+    },
 
-  mark(game, x, y, value) {
+  mark(game, x, y, value)
+   {
       if (game[x][y] == '-')
           game[x][y] = value;
-      for (let i = 0; i <= 2; i++) {
+      for (let i = 0; i <= 2; i++) 
+        {
           var print = [];
           for (let j = 0; j <= 2; j++)
               print[j] = game[i][j];
           console.log(print);
-      }
+        }
       return game;
-  }
-  ,
-  computerPlayer(game) {
+  },
+  
+  computerPlayer(game) 
+   {
       var arr;
       var flag = false;
-      while (flag == false) {
+      while (flag == false) 
+        {
           var x = this.random();
           var y = this.random();
-          if (game[x][y] == '-') {
+          if (game[x][y] == '-') 
+           {
               arr = this.mark(game, x, y, 'O');
               flag = true;
-          }
-      }
+           }
+        }
       return game;
-  }
-  ,
+   },
   
-  userPlayer(game) {
-    var readline = require('readline-sync')
+  
+  userPlayer(game,readline) 
+  {
+    
       var flag = false;
-      while (flag == false) {
+      while (flag == false) 
+      {
           console.log("Enter the row value:");
           let x = readline.questionInt('Enter the value of x within 1,2,3 : ') - 1;
           let y = readline.questionInt('Enter the value of y within 1,2,3 : ') - 1;
-          if (game[x][y] == '-') {
+          if (game[x][y] == '-') 
+          {
               this.mark(game, x, y, 'X');
               flag = true;
           }
@@ -618,32 +629,43 @@
       return game;
   },
   
-  check(game) {
-      for (let i = 0; i <= 2; i++) {
-          if (game[i][0] == game[i][1] && game[i][1] == game[i][2]) {
-              if (game[i][0] == 'O' || game[i][0] == 'X') {
+  check(game) 
+  {
+      for (let i = 0; i <= 2; i++) 
+      {
+          if (game[i][0] == game[i][1] && game[i][1] == game[i][2])
+           {
+              if (game[i][0] == 'O' || game[i][0] == 'X') 
+              {
                   return true;
               }
           }
-          if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) {
-              if (game[0][i] == 'O' || game[0][i] == 'X') {
+          if (game[0][i] == game[1][i] && game[1][i] == game[2][i]) 
+          {
+              if (game[0][i] == 'O' || game[0][i] == 'X') 
+              {
                   return true;
               }
           }
       }
       var k = 0, l = 0;
-      if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) {
-          if (game[0][0] == 'O' || game[0][0] == 'X') {
+      if (game[k][k] == game[k + 1][k + 1] && game[k + 1][k + 1] == game[k + 2][k + 2]) 
+      {
+          if (game[0][0] == 'O' || game[0][0] == 'X') 
+          {
               return true;
           }
       }
-      if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) {
-          if (game[0][0] == 'O' || game[0][0] == 'X') {
+      if (game[l][l + 2] == game[l + 1][l + 1] && game[l + 1][l + 1] == game[l + 2][l]) 
+      {
+          if (game[0][0] == 'O' || game[0][0] == 'X') 
+          {
               return true;
           }
       }
       return false;
   },
+
 
 
  /****************findWindchill***************** */
@@ -672,6 +694,7 @@
         console.log(err);
        }
      },
+    
 
 
 /***************************String Permutations*************************************
@@ -713,6 +736,7 @@
           console.log("error.message");
        }
   },
+ 
 
 
 /*****************************************Algorithms********************************************** */

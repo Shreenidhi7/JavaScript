@@ -1,4 +1,4 @@
-var util=require('../Utility/UtilDataStructures');
+var util=require('../Utility/UtilityDS');
 function primes()
 {
     var primes=[];

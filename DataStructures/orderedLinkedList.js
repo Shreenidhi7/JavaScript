@@ -6,7 +6,7 @@ var arr=Utility.fileRead("nidhi.txt");
 
 for(let i=0;i<arr.length;i++)
 {
-    arr1[i]=Number(arr[i]);
+    arr1[i]=parseInt(arr[i]);
 
 } 
 Utility.mergeSort(arr1);
@@ -42,7 +42,7 @@ while(!valid);
 var result=linkedlist.search(number);
 console.log("number in the list: "+result);
 
-if(result === true)
+if(result ===true)
 {
     console.log(linkedlist.remove(number));
 
