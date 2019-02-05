@@ -7,7 +7,7 @@
                       each number by 11 and the reminder put in the appropriate slot. Create a Chain
                       for each Slot to avoid Collision. If a number searched is found then pop it or else
                       push it. Use Map of Slot Numbers and Ordered LinkedList to solve the problem.
- * @author          : VENKATESH G.      <ven.venky08@gmail.com>
+ * @author          : Shreenidhi Sharma N     <shreenidhisharma7@gmail.com>
  * @version         : 1.0.  
  * @since           : 04/02/2019
  ***************************************************************************/
@@ -36,7 +36,7 @@ function hashing() {
      */
     for (let i = 0; i < numArray.length; i++) {
       var n = Number(numArray[i]);
-      var remainder = n % 10;
+      var remainder = n % 11;
       /**
        * Create a LinkedList object and add the elements
        */
@@ -72,7 +72,7 @@ function hashing() {
         valid = true;
       }
     } while (!valid);
-    remainder = Number(number % 10);
+    remainder = Number(number % 11);
     console.log("Remainder is " + remainder);
     /**
      * To check if the given number is present in the file or no.
