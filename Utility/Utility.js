@@ -100,10 +100,12 @@
              if ((year % 4 == 0) || (year % 400 == 0) && (year % 100 == 0)) 
               {
                 console.log(year + " is a leap year");
+                return true;
               }
              else 
               {
                 console.log(year + " not a leap year");
+                return false;
               }
             }
              else 
@@ -758,7 +760,7 @@
      */
 
 
-    findAnagram(str1,str2)
+    isAnagram(str1,str2)
      {
        try
        {
@@ -799,19 +801,21 @@
        }
     },   
   
-    isAnagram(s, s1) {
-      try {
+    isAnagram(s1, s2) 
+    {
+      try 
+      {
           var format = /[a-zA-Z0-9]/;
           var result;
           /**
            * Condition to check if the input is only charcter.
            */
-          if (format.test(s) && format.test(s1)) 
+          if (format.test(s1) && format.test(s2)) 
           {
               /**
                * Condition to check the length of the first word and seconf=d word is same.
                */
-              if (s.length !== s1.length)
+              if (s1.length !== s2.length)
                {
                   result = false;
               }
@@ -820,13 +824,13 @@
                * Sort the array alphabetically.
                * join the elements of an array into string and store the sorted string in a string.
                */
-              var sort1 = s.toString().split("").sort().join("");
-              var sort2 = s1.toString().split("").sort().join("");
+              var sorts1 = s1.toString().split("").sort().join("");
+              var sorts2 = s2.toString().split("").sort().join("");
               /**
                * If sort1 and sort2 string is equal store true in result .
                * 
                */
-              result = sort1 === sort2;
+              result = sorts1 === sorts2;
               /**
                * If condition check the result is true and print ig give word is anagram.
                */
@@ -1012,6 +1016,9 @@
         var m = month + 12*Math.floor(((14 - month) / 12)) - 2;
         var day = (day + x + Math.floor((31*m) / 12)) % 7;
 
+        //console.log(day)
+       return day;
+      /*
         i=day;
         switch(i)
           {
@@ -1025,7 +1032,8 @@
             case 8:return("Monday");
             case 9:return("Tuesday");
             case 0:return("Sunday");
-          } 
+          }
+        */ 
      },
 
 

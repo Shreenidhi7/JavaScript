@@ -16,12 +16,12 @@
  *
  ************************************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var number=input.question("enter the number= ");// enter the number..
+var number=readline.question("enter the number= ");// enter the number..
 
-var result=num.findSquareRoot(number);//Invoking findSquareRoot function method.
+var result=Utility.findSquareRoot(number);//Invoking findSquareRoot function method.

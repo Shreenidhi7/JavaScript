@@ -12,12 +12,12 @@
  *@since         :24/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
+var readline=require('readline-sync');
 
-var power =read.question("enter the exponent");
+var power =readline.question("enter the exponent");
 
-num.findExponentialOf2(power);//Invoking the power function.
+Utility.findExponentialOf2(power);//Invoking the power function.

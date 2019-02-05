@@ -41,12 +41,12 @@
  
  
      var day = Utility.findDay(1, month, year);
-     console.log(day);
+     //console.log(day);
      var week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
      var dates = [0, 31, 28, 31, 30, 31, 31, 30, 31, 30, 31, 30, 31];
  
      var leap = Utility.leapYear(year);//checking wheather the given year is leap year by using isleapyear function
-     if (leap = true) {
+     if (leap == true) {
          dates[2] = 29;//if the year is leap year then the number of days is 29
      }
  

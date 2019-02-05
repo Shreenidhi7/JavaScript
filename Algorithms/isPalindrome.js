@@ -17,12 +17,12 @@
 
 
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var str=input.question("enter the input= ");
-var result=num.findPalindrome(str);//Invoking the isPalindrome function.
+var str=readline.question("enter the input= ");
+var result=Utility.findPalindrome(str);//Invoking the isPalindrome function.
 console.log(result);

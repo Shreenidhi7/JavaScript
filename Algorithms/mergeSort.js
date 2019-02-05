@@ -13,19 +13,19 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
-var input=require('readline-sync');
+var Utility=require('../Utility/Utility');
+var readline=require('readline-sync');
 
 var arr=[];
-var size=input.question("enter the size= ");
+var size=readline.question("enter the size= ");
 
 for(let i=0;i<size;i++)
 {
-  arr.push(input.questionInt("enter the elements= "));  
+  arr.push(readline.questionInt("enter the elements= "));  
 }
 console.log("before sorting= ");
 console.log(arr);
 
-var result=num.mergeSort(arr);
+var result=Utility.mergeSort(arr);
 console.log("after sorting= ");
 console.log(result);

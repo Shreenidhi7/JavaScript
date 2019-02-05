@@ -12,21 +12,21 @@
  *@since         :28/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
 var arr=[];
-var size=input.question("enter the size");
+var size=readline.question("enter the size");
 
 for(let i=0;i<size;i++)
 {
-    arr.push(input.questionInt("enter the elements"));
+    arr.push(readline.questionInt("enter the elements"));
 
 }
 console.log("before sorting");
 console.log(arr);
 
-num.generateInsertsort(arr);//Invoking insertionSort function.
+Utility.generateInsertsort(arr);//Invoking insertionSort function.

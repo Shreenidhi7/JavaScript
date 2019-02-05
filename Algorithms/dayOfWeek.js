@@ -16,16 +16,16 @@
 
 
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
 var day=Number(process.argv[2]);
 var month=Number(process.argv[3]);
 var year=Number(process.argv[4]);
 
-var res=num.findDay(day,month,year);
+var res=Utility.findDay(day,month,year);
 
 console.log(res);//Invoking bubbleSort function.

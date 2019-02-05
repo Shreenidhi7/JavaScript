@@ -13,16 +13,16 @@
  *@since         :25/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
-var a= read.question("enter value of a= ");
-var b= read.question("enter value of b= ");
-var c= read.question("enter value of c= ");
+var readline=require('readline-sync');
+var a= readline.question("enter value of a= ");
+var b= readline.question("enter value of b= ");
+var c= readline.question("enter value of c= ");
 /**
  * Taking the user input.
  */
 
-num.findQuadratic(a,b,c);//Invoking the Quadratic function.
+Utility.findQuadratic(a,b,c);//Invoking the Quadratic function.

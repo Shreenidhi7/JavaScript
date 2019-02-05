@@ -15,10 +15,10 @@
  ***********************************************************/
 
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
-var amount=input.question("enter the amount= ");
-num.calculateNotes(amount);//Invoking the vendingMachine function.
+var readline=require('readline-sync');
+var amount=readline.question("enter the amount= ");
+Utility.calculateNotes(amount);//Invoking the vendingMachine function.

@@ -22,7 +22,7 @@ function ticTacToe()
     var arr = utility.intializeGame();
     console.log("Player 1 : Computer, Symbol : O");
     console.log("Player 2 : You, Symbol : x");
-    console.log("Winning isn't everything, but wanting to win is...");
+    //console.log("Winning isn't everything, but wanting to win is...");
     var count = 1;
     while (count <= 9) 
     {
@@ -40,7 +40,7 @@ function ticTacToe()
         }
         else if (count == 8) 
         {
-            console.log("Draw match.. Try next!");
+            console.log("Draw match..Better luck next time!");
             break;
         }
         arr = utility.userPlayer(arr,readline);
@@ -52,7 +52,7 @@ function ticTacToe()
         }
         if (flag) 
         {
-            console.log("Gosh!.. I knew it. You are the winner");
+            console.log("You Win");
             break;
         }
         count++;

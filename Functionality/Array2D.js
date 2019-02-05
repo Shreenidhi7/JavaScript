@@ -12,7 +12,7 @@
  *@since         :25/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
@@ -27,4 +27,4 @@ var columns=read.question("enter number of columns");
  * Taking the user input to enter number of cols.
  */
 
-num.TwoDimensionalArray(rows,columns,read);//Invoking the createArray function.
+Utility.TwoDimensionalArray(rows,columns,read);//Invoking the createArray function.

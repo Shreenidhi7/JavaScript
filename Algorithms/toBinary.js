@@ -15,15 +15,15 @@
 
 
 
-var num=require("../Utility/Utility");
+var Utility=require("../Utility/Utility");
 /**
  * For accessing data from utility file.
  */
-var input=require("readline-sync");
+var readline=require("readline-sync");
 
-var number=input.question("enter the integer number= ");
+var number=readline.question("enter the integer number= ");
 
-var str=num.toBinary(number);//Invoking the toBinary function.
+var str=Utility.toBinary(number);//Invoking the toBinary function.
 
 
 console.log(str);

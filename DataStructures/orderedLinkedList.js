@@ -1,22 +1,24 @@
 var readline=require('readline-sync');
 var Utility=require('../Utility/Utility');
 var UtilityDS=require('../Utility/UtilityDS');
-var arr=Utility.fileRead("nidhi.txt");
- var arr1=[];
-
-for(let i=0;i<arr.length;i++)
-{
-    arr1[i]=parseInt(arr[i]);
-
-} 
-Utility.mergeSort(arr1);
-console.log(arr1);
-
-var linkedlist= new UtilityDS.LinkedList();
+var arr1=Utility.fileRead("nidhi.txt");
+console.log("before sort "+arr1);
+ var arr=[];
 
 for(let i=0;i<arr1.length;i++)
 {
-    linkedlist.add(arr1[i]);
+    arr[i]=parseInt(arr1[i]);
+
+} 
+arr.sort();
+//Utility.mergeSort(arr);
+console.log("after sorting"+arr);
+
+var linkedlist= new UtilityDS.LinkedList();
+
+for(let i=0;i<arr.length;i++)
+{
+    linkedlist.add(arr[i]);
 }
 //console.log(linkedlist);
 

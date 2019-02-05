@@ -13,14 +13,14 @@
  *@since         :24/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync')
+var readline=require('readline-sync')
 
-var number=read.question("enter the number= ");
+var number=readline.question("enter the number= ");
 /**
  * Taking the user input.
  */
-num.findHarmonic(number);
+Utility.findHarmonic(number);

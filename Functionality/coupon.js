@@ -13,11 +13,11 @@
  * 
  ***********************************************************/
 
- var num=require('../Utility/Utility');
+ var Utility=require('../Utility/Utility');
  /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
+var readline=require('readline-sync');
 
-var coupannumber=read.question("enter coupans needed? ");
-num.generateCoupons(coupannumber);//Invoking the Coupon function.
+var coupannumber=readline.question("enter coupans needed? ");
+Utility.generateCoupons(coupannumber);//Invoking the Coupon function.

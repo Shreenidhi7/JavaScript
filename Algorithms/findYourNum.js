@@ -14,13 +14,13 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 var n=process.argv[2];//accepting the input from user in command line arguements
 
-var res=num.toFindNumber(0,n-1,input);
+var res=Utility.toFindNumber(0,n-1,readline);
 
 console.log("the number is= "+res);//Invoking the toFindNumber function.

@@ -13,10 +13,10 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var result=num.tempConversion(input);//Invoking temperatureConversion function method.
+var result=Utility.tempConversion(readline);//Invoking temperatureConversion function method.

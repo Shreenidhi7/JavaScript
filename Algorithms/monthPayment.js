@@ -15,17 +15,17 @@
  ***********************************************************/
 
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
 var principal=process.argv[2];
 var year=process.argv[3];
 var rate=process.argv[4];
 
-var amount=num.monthPayment(principal,year,rate)
+var amount=Utility.monthPayment(principal,year,rate)
 
 console.log(amount);//Invoking monthlyPayment function.
 

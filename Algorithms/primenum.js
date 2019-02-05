@@ -12,15 +12,15 @@
  *@since         :27/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var initial=input.question("enter input range= ");//for entering the initial value.
-var final=input.question("enter output range= ");//for entering the final value.
+var initial=readline.question("enter input range= ");//for entering the initial value.
+var final=readline.question("enter output range= ");//for entering the final value.
 
-var res=num.isPrime(initial,final);//Invoking the generatePrimeno function.
+var res=Utility.isPrime(initial,final);//Invoking the generatePrimeno function.
 
 console.log(res);

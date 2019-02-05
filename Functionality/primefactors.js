@@ -14,14 +14,14 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
+var readline=require('readline-sync');
 
-var number=read.question("enter number= ");
+var number=readline.question("enter number= ");
 /**
  * Taking the user input.
  */
-num.printPrimeFactors(number);//Invoking the primeFactors function.
+Utility.printPrimeFactors(number);//Invoking the primeFactors function.

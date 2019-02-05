@@ -13,21 +13,21 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
 var inputArray=[];
-var size=input.question("enter the size");
+var size=readline.question("enter the size");
 var i;
 
 for( i=0;i<size;i++)
 {
-    inputArray.push(input.questionInt("enter elements"));
+    inputArray.push(readline.questionInt("enter elements"));
 }
 console.log("before sorting")
 console.log(inputArray);
 //alert(inputArray(','));
-num.generateBubbleSort(inputArray);//Invoking bubbleSort function.
+Utility.generateBubbleSort(inputArray);//Invoking bubbleSort function.

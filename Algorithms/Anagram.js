@@ -12,16 +12,16 @@
  *@since         :27/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
-var str1=input.question("enter string1");
-var str2=input.question("enter string2");
+var readline=require('readline-sync');
+var str1=readline.question("enter string1");
+var str2=readline.question("enter string2");
 /**
  * Accepting the user inputs.
  */
-var result=num.findAnagram(str1,str2);//Invoking the Anagram function.
+var result=Utility.findAnagram(str1,str2);//Invoking the Anagram function.
 
 console.log(result);

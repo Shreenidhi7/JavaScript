@@ -14,19 +14,19 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
-var number=read.question("enter the size of an array");
+var readline=require('readline-sync');
+var number=readline.question("enter the size of an array");
 /**
  * Take the user input for declaring the array size.
  */
 var arr=[];
 for(let i=0;i<=number;i++)
 {
-    var numbers=read.question("enter the elements");
+    var numbers=readline.question("enter the elements");
     arr.push(numbers);
 }
-num.findTriplets(number,arr);//Invoking findtriplets function
+Utility.findTriplets(number,arr);//Invoking findtriplets function

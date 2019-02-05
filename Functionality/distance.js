@@ -13,10 +13,10 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
 var result1=process.argv[2];
 var result2=process.argv[3];
-num.findEuclidistance(result1,result2);//Invoking the Distance function.
+Utility.findEuclidistance(result1,result2);//Invoking the Distance function.

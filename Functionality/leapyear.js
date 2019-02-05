@@ -14,15 +14,15 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
+var readline=require('readline-sync');
 
-var year=read.question("enter the year ");
+var year=readline.question("enter the year ");
 /**
  * Taking the user input.
  */
 
-num.leapYear(year);//Invoking the leapyear function.
+Utility.leapYear(year);//Invoking the leapyear function.

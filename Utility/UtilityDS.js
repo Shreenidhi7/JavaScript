@@ -476,8 +476,8 @@ class Queue
 
 /***************************************************************************************** */
 
-/*
-class Queue
+
+class Queue1
 {
   constructor()
    {
@@ -494,8 +494,8 @@ class Queue
     if(this.isEmpty())
      {
       return "Underflow";
-      return this.items.shift();
-     }
+      }
+     return this.items.shift();
    }
 
   isEmpty()
@@ -513,7 +513,7 @@ class Queue
      }
    }
 }
-*/
+
 /*********************************************************************************8
  */
 class Dequeue
@@ -863,6 +863,7 @@ module.exports = { LinkedList,
   Queue, 
   Dequeue,
   LinkedListQueue, 
+  Queue1,
 
 getBinaryTree(num)
 {

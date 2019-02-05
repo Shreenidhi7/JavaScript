@@ -15,13 +15,13 @@
  * 
  ***********************************************************/
 
-var random=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
-var username=read.question("enter the name ");
+var readline=require('readline-sync');
+var string=readline.question("enter the name ");
 /**
  * Taking the user input.
  */
-random.replaceString(username);//Invoking the stringReplace function.
+Utility.replaceString(string);//Invoking the stringReplace function.

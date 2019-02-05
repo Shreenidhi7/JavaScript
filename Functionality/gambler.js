@@ -13,14 +13,14 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var read=require('readline-sync');
+var readline=require('readline-sync');
 
-var stake=read.question("enter stake value= ");
-var goal=read.question("enter goal value= ");
-var numberoftimes=read.question("enter nor of times=");
+var stake=readline.question("enter stake value= ");
+var goal=readline.question("enter goal value= ");
+var numberoftimes=readline.question("enter nor of times=");
 
-num.doGamble(stake,goal,numberoftimes);//Invoking gambler function.
+Utility.doGamble(stake,goal,numberoftimes);//Invoking gambler function.

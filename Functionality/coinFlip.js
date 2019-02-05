@@ -15,8 +15,8 @@
  * 
  ***********************************************************/
 
-var num=require('../Utility/Utility');
-var read=require('readline-sync');
+var Utility=require('../Utility/Utility');
+var readline=require('readline-sync');
 
-var number=read.question("enter the number ");
-num.flipCoin(number);//Invoking the flipcoin function.
+var number=readline.question("enter the number ");
+Utility.flipCoin(number);//Invoking the flipcoin function.

@@ -19,18 +19,18 @@
 
 
 
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var string=input.question("enter the string= ");
+var string=readline.question("enter the string= ");
 /**
  * Taking the user input.
  */
 
 
-var results=num.stringPermutations(string);//Invoking the permutation of strings function.
+var results=Utility.stringPermutations(string);//Invoking the permutation of strings function.
 
 console.log(results);

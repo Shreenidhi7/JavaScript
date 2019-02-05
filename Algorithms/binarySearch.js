@@ -13,12 +13,12 @@
  * 
  ***********************************************************/
  
- var num=require('../Utility/Utility');
+ var Utility=require('../Utility/Utility');
  /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
- var words=input.question("enter the word to be searched= ");
+var readline=require('readline-sync');
+ var words=readline.question("enter the word to be searched= ");
  var file=require('fs');
  var arr=[];
  file.readFile('text.txt',(err,data)=>
@@ -26,5 +26,5 @@ var input=require('readline-sync');
      if(err)
      throw err;
      arr=data.toString().split(" ");
-     console.log(num.doBinarySearch(arr,words));
+     console.log(Utility.doBinarySearch(arr,words));
  })

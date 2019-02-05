@@ -14,11 +14,11 @@
  ***********************************************************/
 
 
-var read=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-var result=read.AnagramPrime();//Invoking the Anagramprime function.
+var result=Utility.AnagramPrime();//Invoking the Anagramprime function.
 console.log(result)

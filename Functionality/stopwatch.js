@@ -13,10 +13,10 @@
  *@since         :25/01/2019
  * 
  ***********************************************************/
-var num=require('../Utility/Utility');
+var Utility=require('../Utility/Utility');
 /**
  * For accessing data from utility file.
  */
-var input=require('readline-sync');
+var readline=require('readline-sync');
 
-num.stopWatch(input);//Invoking readTime function
+Utility.stopWatch(readline);//Invoking readTime function

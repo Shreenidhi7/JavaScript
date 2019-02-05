@@ -13,12 +13,12 @@
  *  @since         : 29/01/2019
  *
  ******************************************************************************/
-var path = require('../Utility/Utility');
-var read = require('readline-sync');
+var Utility = require('../Utility/Utility');
+var readline = require('readline-sync');
 
-var num=read.question("enter the number= ");
+var num=readline.question("enter the number= ");
 
- var result=path.binarySwapNibble(num);
+ var result=Utility.binarySwapNibble(num);
 
  console.log(result);
 
