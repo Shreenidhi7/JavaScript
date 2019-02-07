@@ -390,8 +390,8 @@ class Queue
       }
     }
    
-  /*
-   class Queue
+  /**************************CheckBalance*******************************************  */
+   class Queue2
    {
      constructor()
      {
@@ -407,10 +407,10 @@ class Queue
       this.capacity=capacity;
       var t= new  items[capacity];
     }
-    enque(data)
+    enqueue(data)
     {
       console.log(data)
-      {
+      
         if(this.top == this.capacity-1)
         {
           console.log("Stack Overflow")
@@ -422,9 +422,9 @@ class Queue
         }
         this.size++;
         this.items[++this.rear]= data;
-      }
     }
-    deque()
+
+    dequeue()
     {
       if(this.front== -1)
       {
@@ -437,7 +437,7 @@ class Queue
       {
         this.front=this.rear=-1;
       }
-      return
+      return ele;
     }
 
 
@@ -457,22 +457,22 @@ class Queue
 
     display()
     {
-      var res="";
+      var res= "";
       for(var i=this.front;i<=this.rear;i++)
       {
-        var res=res+this.items[i];
+        var res=res + this.items[i];
         if(i<this.rear)
         {
-          res=res+"";
+          res=res+",";
         }
       }
       return res;
     }
+  }
 
 
 
 
-*/
 
 /***************************************************************************************** */
 
@@ -514,7 +514,7 @@ class Queue1
    }
 }
 
-/*********************************************************************************8
+/**************************Palindrome*************************************************8
  */
 class Dequeue
  {
@@ -768,7 +768,7 @@ removeRear()
 }
 
 
-
+/*****************************LinkedList Queue*********************************************** */
 
 
 class LinkedListQueue {
@@ -864,6 +864,8 @@ module.exports = { LinkedList,
   Dequeue,
   LinkedListQueue, 
   Queue1,
+  Queue2,
+
 
 getBinaryTree(num)
 {

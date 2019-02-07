@@ -1,64 +1,65 @@
 var UtilityDS = require('../Utility/UtilityDS');
 var readline = require('readline-sync');
 
-function Queue() 
+function queued() 
  {
-
-    var Queue1 = new UtilityDS.Queue;
-    var Queue2 = new UtilityDS.LinkedListQueue;
-    var bankamount = 300;
+    var Queue1 = new UtilityDS.Queue2;
+    var Queue2 = new UtilityDS.Queue2;
+    var bankamount = 3000;
     var temp = 0;
     var c = 0;
     var flag = true;
     var l = readline.questionInt("enter total no of people");
 
-    for (let i = 1; i <= 1; i++) 
+    for (let i = 1; i <= l; i++) 
     {
         if (l > 0)
          {
-            var s = readline.questionInt("enter 1 for deposition or enter 2 for withdrawal");
+            var s = readline.questionInt("\n enter 1 for deposition \n enter 2 for withdrawal");
             if (s == 0) 
               {
                 var amount = readline.questionFloat("enter amount to deposit");
-                 Queue1.enque(amount);
+                 Queue1.enqueue(amount);
               }
             else if (s == 1) 
               {
                 for (let i = 1; i <= 1; i++) 
                   {
-                    bankamount = bankamount + Queue1.deque();
+                    bankamount = bankamount + Queue1.dequeue();
                   }
 
 
                 var amount = readline.questionFloat("enter amount to withdraw");
                   {
-                    if (amount > bankamount) 
+                    if (amount >= bankamount) 
                       {
                         console.log(bankamount + "gggg");
                         c++;
                         temp = amount;
-                        Queue2.enque(-amount);
+                        Queue2.enqueue(-amount);
                       }
                     else 
                       {
                         console.log(bankamount + "ffff");
-                        Queue1.enque(-amount);
+                        Queue1.enqueue(-amount);
                       }
                  }
             }
             else
+            {
                 flag = false;
+            }
         }
     }
     if (flag) 
       {
-        for (let i = 1; i <= 1; i++) 
+        for (let i = 1; i <= l; i++) 
          {
-          bankamount = bankamount + Queue1.deque();
+          bankamount = bankamount + Queue1.dequeue();
          }
         for (let i = 1; i <= c; i++)  
           {
-            bankamount = bankamount + Queue2.deque();
+            bankamount = bankamount + Queue2.dequeue();
           }
         if (bankamount >= 0) 
           {
@@ -71,7 +72,8 @@ function Queue()
       }
     else 
       {
-       Queue()
+       queued()
     }
-    Queue()
-}
+  }
+    queued()
+ 

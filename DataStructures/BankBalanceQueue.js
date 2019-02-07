@@ -79,122 +79,87 @@ function Queue()
     }      
 }
 Queue();        
-*/
-/*******************Simulate Banking Cash Counter******************
- * 4.Simulate Banking Cash Counter.
- * Execution : default node : cmd>node cashCounter.js
- * @purpose : people to either deposit or withdraw money and maintain the cash balance.
- *
+
+
+/************************************************************************
+ * Execution :   default node : cmd> node bankingCashCounter.js
+ *              
+ * Purpose   :   To  Write a Queue Class to enqueue and dequeue people to either deposit or withdraw 
+ *               money and maintain the cash balance
+ * 
  * @description
- * @file : cashCounter.js
- * @overview : Create a Program which creates Banking Cash Counter where people
- *  come in to deposit Cash and withdraw Cash. Have an input panel to add people 
- * to Queue to either deposit or withdraw money and dequeue the people.
- *  Maintain the Cash Balance.
+ * @file     :   cashCounter.js
+ * @overview :   Create a Program which creates Banking Cash Counter where people come in to deposit Cash
+ *               and withdraw Cash. Have an input panel to add people to Queue to either deposit or withdraw 
+ *               money and dequeue the people. Maintain the Cash Balance.
+ * @author   :   Shreenidhi Sharma N <shreenidhisharma7@gmail.com>
+ * @version  :   1.0
+ * @since    :   01/02/2019
 
- * @param :Panel to add People to Queue to Deposit or Withdraw Money and dequeue 
- *********************************************************************
- */
-
-
-var UtilityDS = require('../Utility/UtilityDS')
-var Utility = require('../Utility/Utility');
+ **************************************************************************/
+var UtilityDS = require('../Utility/UtilityDS');
 var readline = require('readline-sync');
-
-function Queue()
- {
-    var Queue = new UtilityDS.Queue;
-    var bankamount = 4000;
-    var set = [];
+function queue() 
+{
+    var que = new UtilityDS.Queue1;
+    var bankAmount = 10000;
     var flag = true;
-    var count = 0;
-    var valid = false;
-    do 
-    {
-        var size = readline.question("Enter the total number of people to be in queue :")
-        if (isNaN(size)) 
-        {
-            console.log("Not a valid entry");
-        }
-        else 
-        {
-            valid = true;
-        }
-    } 
-    while (!valid)
+    var size = readline.question("Enter the total number of people to be in queue = ");
     if (size > 0) 
     {
-        /**
-         * Loop the number of size of people to deposit and withdraw amount.
-         */
         for (let i = 1; i <= size; i++) 
         {
-            var input = readline.question("Enter 1 deposit amount :\nEnter 2 to withdraw amount :")
-            if (input == 1) 
-             {
-                var amount = readline.questionFloat("Enter the total amount to deposit :")
-                var set = Queue.enQueue(Number(amount));
+            var in1 = readline.question("Enter 1 deposit amount   \nEnter 2 to withdraw amount   :")
+            if (in1 == 1) 
+            {
+                var amount = readline.questionFloat("Enter the total amount to deposit = ")
+                que.enqueue(Number(amount));
+                bankAmount=bankAmount+amount;
                 flag = true;
-             }
-            else if (input == 2) 
-             {
-                var amount = readline.questionInt("Enter the total amount to be withdraw :")
-                if ( amount<=bankamount)
+            }
+            else if (in1 == 2) 
+            {
+                var amount = readline.questionInt("Enter the total amount to be withdraw = ")
+                que.enqueue(Number(-amount))
+                bankAmount=bankAmount-amount;
+                if(bankAmount<0)
                 {
-                Queue.enQueue(Number(-amount))
-                flag = true;
+                    console.log("bank is out of cash");
+                    break;
                 }
-             }
+                flag = true;
+            }
             else 
-             {
+            {
                 console.log("Make sure that you have entered correct key ");
                 flag = false;
                 return;
-             }
-         }
-     }
+            }
+        }
+    }
     else 
-     {
-        console.log(" Invalid input ");
+    {
+        console.log("Invalid input");
         return;
-     }
-    /**
-     * Condition to check if flag is true enter the loop.
-     */
+    }
     if (flag) 
-     {
-        var add = 0
-        /**
-         * Loop number of size and dequeue the people.
-         */
-        for (let i = 1; i < size; i++) 
-         {
-            add = add + Queue.deQueue();
-         }
-       // console.log(add);
-        var totalamount = bankamount + add;
-        if(add>0)
-         {
-          console.log("Total amount left in bank is :" + totalamount);
-         }
-        else
-         {
-            console.log("Insufficent Balance ")
-         }
-        if (totalamount < bankamount) 
-         {
-            console.log("Minimum cash is not maintained in bank:");
-         }
-        else 
-         {
+    {
+        bankAmount=10000;
+        var add = 0;
+        for (let i = 1; i <= size; i++) 
+        {
+            add = add + que.dequeue();
+        }
+        //console.log(add);
+        var totalAmount = bankAmount + add;
+        console.log("Total amount left in bank is:" + totalAmount);
+        if (totalAmount > bankAmount) 
+        {
             console.log("Minimum cash is maintained in bank");
-         }
+        }
     }
 }
-Queue();
-
-
-
+queue();
 
 
 

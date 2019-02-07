@@ -22,6 +22,6 @@ var str2=readline.question("enter string2");
 /**
  * Accepting the user inputs.
  */
-var result=Utility.findAnagram(str1,str2);//Invoking the Anagram function.
+var result=Utility.isAnagram(str1,str2);//Invoking the Anagram function.
 
 console.log(result);

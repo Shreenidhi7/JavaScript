@@ -551,7 +551,7 @@
 
 
       /***************************************TicTacToe***********************************************
-     * 14.ticTac
+     * ticTacote
      * **********************************
      * @purpose     : To play a Cross Game or Tic-Tac-Toe Game. Player 1 is the Computer and the
      *                Player 2 is the user. Player 1 take Random Cell that is the Column and Row. 
