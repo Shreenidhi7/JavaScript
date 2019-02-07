@@ -2,19 +2,19 @@
      "Rice":
      [
          {
-             "ricename":"basumathi",
+             "name":"basumathi",
              "weight":10,
              "price":80
          },
          
          {
-            "ricename":"brownRice",
+            "name":"brownRice",
             "weight":5,
             "price":60
          },
 
          {
-            "ricename":"HimalayanRedRice",
+            "name":"HimalayanRedRice",
             "weight":2,
             "price":40
          }
@@ -23,19 +23,19 @@
     "Wheat":
     [
         {
-            "wheatName":"cornflour",
+            "name":"cornflour",
             "weight":2,
             "price":30
         },
 
         {
-            "wheatName":"cakeflour",
+            "name":"cakeflour",
             "weight":1,
             "price":100
         },
 
         {
-            "wheatName":"barley",
+            "name":"barley",
             "weight":3,
             "price":35
         }
@@ -44,19 +44,19 @@
     "Pulses":
     [
         {
-            "pulseName":"soyaBean",
+            "name":"soyaBean",
             "weight":2,
             "price":50
         },
 
         {
-            "pulseName":"lentis",
+            "name":"lentis",
             "weight":3,
             "price":70
         },
 
         {
-            "pulseName":"kidneyBeans",
+            "name":"kidneyBeans",
             "weight":4,
             "price":35
         }

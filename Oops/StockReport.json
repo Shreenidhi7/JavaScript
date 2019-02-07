@@ -1,0 +1,28 @@
+{
+    "Stock":
+    [
+        {
+            "stockname":"WIPRO",
+            "numberofshare":50,
+            "shareprice":10000
+        },
+
+        {
+            "stockname":"TCS",
+            "numberofshare":50,
+            "shareprice":5000
+        },
+
+        {
+            "stockname":"Bridgelabz",
+            "numberofshare":50,
+            "shareprice":4000
+        },
+
+        {
+            "stockname":"Infosys",
+            "numberofshare":50,
+            "shareprice":8000
+        }
+    ]
+}
