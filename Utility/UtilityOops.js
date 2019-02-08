@@ -28,6 +28,9 @@
 
 
 */
+var read = require('readline-sync');
+var file = require('fs');
+
 class Rice
 {
     constructor(name, weight, price)
@@ -72,7 +75,7 @@ class Pulses
 }
 
 
-/**************************************************************************** */
+/***************************STOCK******************************************************** */
 
 class Stock
 {
@@ -88,13 +91,75 @@ class Stock
         return this.numberOfShare * this.sharePrice;
     }
 
+    
+}
+/********************************INVENTORY MANAGER******************************************************* */
+
+class inventoryManage {
+
+    constructor() {
+
+    }
+    add(data) {
+        var name = read.question("Enter the name of the stock to add :");
+        var shares = read.questionInt("Enter number of shares :");
+        var quantity = read.questionInt("Enter the price of the shares :");
+        data.Stock.push(
+            {
+                stockname: name,
+                numberofshare: shares,
+                shareprice: quantity
+            })
+        var d = file.writeFileSync('StockReport.json', JSON.stringify(data))
+    }
+
+    remove(data) {
+        var name = read.question("Enter the name of the stock want to remove :")
+        for (let i = 0; i < data.Stock.length; i++) {
+            if (data.Stock[i].stockname == name) {
+                var index = data.Stock.indexOf(data.Stock[i])
+                data.Stock.splice(index, 1)
+            }
+            var d = file.writeFileSync('StockReport.json', JSON.stringify(data))
+        }
+    }
+
+    print(data) {
+        var stock = data.Stock;
+        for (const key in stock) 
+        {
+            console.log(stock[key]);
+
+        }
+    }
+    edit(data) {
+        var stock = data.Stock;
+        var name = read.question("Enter the stock name to edit :")
+        var shr = read.question("Enter noofShares to edit : ")
+        var money = read.question("Enter the shares price :")
+        for (let key in stock) {
+            if (stock[key].stockname == name)
+                var value = key;
+            if (stock[key].numberofshare == shr)
+                var value1 = key;
+            if (stock[key].shareprice == money)
+                var value2 = key;
+        }
+        var name1 = read.question("Enter the new name of the share :");
+        stock[value].stockname= name1;
+        var name2 = read.question("Enter the new noofShares :");
+        stock[value1].numberofshare = name2;
+        var name3 = read.question("Enter  the new price of the shares :")
+        stock[value2].shareprice = name3;
+        var d = file.writeFileSync('StockReport.json', JSON.stringify(data))
+    }
 }
 
 
 
 /**********************************String Replace**************************************** */
 module.exports={
-    Stock,Rice,Wheat,Pulses,
+    Stock,Rice,Wheat,Pulses,inventoryManage,
 
 
 

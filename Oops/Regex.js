@@ -14,7 +14,7 @@ while(!isNaN(name))
 }
 
 var phoneNum=read.question("enter contact number: ")
-while(isNaN(phoneNum) && phoneNum.length!=10)
+while(isNaN(phoneNum) || (phoneNum.length!=10))
 {
     phoneNum=read.question("enter valid contact number");
 }

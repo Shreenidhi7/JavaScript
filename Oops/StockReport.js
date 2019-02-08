@@ -16,7 +16,7 @@ for(let i in d)
     i=new UtilityOops.Stock(name,numberofshare,shareprice);
     //var d=i.shareprice();
 }
-console.log("Value Of Total Stocks: "+sum);
+console.log("\n"+"Value Of Total Stocks: "+sum);
 
 //D.stockReport(object)
 //var o=new D.Stock;
