@@ -1,12 +1,13 @@
 var Util=require('util');
-var suit= ["\u2663", "\u2666", "\u2665", "\u2660"];
+var suit= ["\♥", "\♦", "\u2665", "\u2660"];
 var rank=['2','3','4','5','6','7','8','9','10',"jack","queen","king","ace"];
 var cards=suit.length * rank.length;
 var cardarr=[];
 console.log("\u2663");
 console.log("\u2666");
 console.log("\u2665");
-console.log("\u2660")
+console.log("\u2660");
+
 for(let i=0;i<suit.length;i++)
 {
     for(let j=0;j<rank.length;j++)

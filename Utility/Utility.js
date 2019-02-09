@@ -953,8 +953,8 @@
                }
             }
         }
-        console.log("after sorting");
-        console.log(inputArray);
+       // console.log("after sorting");
+        console.log("["+" "+inputArray+" "+"]");
      },
 
 
@@ -986,8 +986,8 @@
              arr[j+1]=temp;
 
          }
-         console.log("after sorting ")
-         console.log(arr);
+         //console.log("after sorting ")
+         console.log("["+""+arr+""+"]");
          return arr;
      },
 
