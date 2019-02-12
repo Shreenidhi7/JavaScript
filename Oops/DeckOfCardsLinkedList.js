@@ -24,10 +24,10 @@ for(let i=0;i<cards;i++)
     cardarr[num]=temp;
 }
 
-var Player1=new UtilityDS.LinkedListQueue
-var Player2=new UtilityDS.LinkedListQueue
-var Player3=new UtilityDS.LinkedListQueue
-var Player4=new UtilityDS.LinkedListQueue
+var Player1=new UtilityDS.Queue1
+var Player2=new UtilityDS.Queue1
+var Player3=new UtilityDS.Queue1
+var Player4=new UtilityDS.Queue1
 for(let i=0;i<cardarr.length;i++)
 {
     if(i>=0 && i<13)

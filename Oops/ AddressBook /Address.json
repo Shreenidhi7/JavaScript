@@ -1,0 +1,40 @@
+{
+    "Person": [
+        {
+            "firstName": "Kiran",
+            "lastName": "Tukaram",
+            "address": {
+                "street": "Kalpana Chawla Road",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "nationality": "Indian",
+                "zip": "560054",
+                "phoneNum": "8660057536"
+            }
+        },
+        {
+            "firstName": "Vishal",
+            "lastName": "C",
+            "address": {
+                "street": "KN Extension",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "nationality": "Indian",
+                "zip": "560022",
+                "phoneNum": "7204803794"
+            }
+        },
+        {
+            "firstName": "Akshay Kumar",
+            "lastName": "G",
+            "address": {
+                "street": "Gayathri Nagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "nationality": "Indian",
+                "zip": "420840",
+                "phoneNum": "9742300340"
+            }
+        }
+    ]
+}

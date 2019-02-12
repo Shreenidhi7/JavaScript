@@ -954,7 +954,8 @@
             }
         }
        // console.log("after sorting");
-        console.log("["+" "+inputArray+" "+"]");
+       // console.log("["+" "+inputArray+" "+"]");
+        return inputArray;
      },
 
 

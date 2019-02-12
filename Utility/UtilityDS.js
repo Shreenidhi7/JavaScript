@@ -808,6 +808,8 @@ class LinkedListQueue {
       } else {
           let itemToPop = this.head;
           this.head = this.head.next;
+          
+          
           return itemToPop;
       }
   }

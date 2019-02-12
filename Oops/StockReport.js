@@ -2,21 +2,21 @@ var UtilityOops=require('../Utility/UtilityOops');
 var fileread=require('fs');
 var input=fileread.readFileSync('StockReport.json','utf8');
 var object=JSON.parse(input);
-var sum=0;
-var d=object.Stock;
+var totalStock=0;
+var stock=object.Stock;
 
-for(let i in d)
+for(let i in stock)
 {
-    var name=d[i].stockname;
-    var numberofshare=d[i].numberofshare;
-    var shareprice=d[i].shareprice;
+    var name=stock[i].stockname;
+    var numberofshare=stock[i].numberofshare;
+    var shareprice=stock[i].shareprice;
     var total=numberofshare * shareprice;
-    console.log("The Total Value Of","[",d[i].stockname,"]","Share Is",d[i].numberofshare * d[i].shareprice);
-    sum=sum+total;
+    console.log("The Total Value Of","[",stock[i].stockname,"]","Share Is",stock[i].numberofshare * stock[i].shareprice);
+    totalStock=totalStock+total;
     i=new UtilityOops.Stock(name,numberofshare,shareprice);
     //var d=i.shareprice();
 }
-console.log("\n"+"Value Of Total Stocks: "+sum);
+console.log("\n"+"Value Of Total Stocks: "+totalStock);
 
 //D.stockReport(object)
 //var o=new D.Stock;
