@@ -16,7 +16,7 @@ if(number==1)
 }
 if(number==2)
 {
-    p1.searchDoctors(object)
+    p1.searchDoctor(object)
 }
 if(number==3)
 {
