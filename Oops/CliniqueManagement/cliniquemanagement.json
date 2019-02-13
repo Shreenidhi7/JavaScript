@@ -1,9 +1,10 @@
+
 {
     "Doctors": [
         {
             "Name": "DR Spoorthy",
             "Id": "50",
-            "Specialization": "MBBS",
+            "Specialization": "Liver",
             "Availability": "AM",
             "Numberofappointmaent": 0
         },
@@ -11,6 +12,20 @@
             "Name": "DR Sahana",
             "Id": "55",
             "Specialization": "all",
+            "Availability": "PM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Shri",
+            "Id": "52",
+            "Specialization": "Cancer",
+            "Availability": "AM",
+            "Numberofappointmaent": 0
+        },
+        {
+            "Name": "DR Surya",
+            "Id": "59",
+            "Specialization": "Tumor",
             "Availability": "PM",
             "Numberofappointmaent": 0
         }
@@ -37,7 +52,29 @@
             "Name": "Thejas",
             "mobilenumber": "9632951787",
             "Id": "TH"
+        },
+        {
+            "Name": "Vis",
+            "mobilenumber": "7204803794",
+            "Id": "VC"
+        },
+        {
+            "Name": "Kir",
+            "mobilenumber": "9632951787",
+            "Id": "KI"
+        },
+        {
+            "Name": "Nit",
+            "mobilenumber": "9972421973",
+            "Id": "NI"
+        },
+        {
+            "Name": "Thej",
+            "mobilenumber": "9632951787",
+            "Id": "TJ"
         }
         
     ]
 }
+
+

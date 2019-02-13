@@ -22,5 +22,11 @@
         "symbol": "G",
         "share": 500,
         "price": 8000
+    },
+    {
+        "name": "mai",
+        "symbol": "a",
+        "share": 12,
+        "price": 123
     }
 ]

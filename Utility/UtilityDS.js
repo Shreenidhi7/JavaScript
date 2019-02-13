@@ -1,16 +1,6 @@
-/*
- var T=require('util')
-var req = require('util');
-var Utility = require('../Utility/Utility');
-/*class Node {
 
-    constructor(data) {
-        this.data = data
-        this.next = null
-    }
 
-}
-*//***********************************************************
+/***********************************************************
  *
  * Execution     :Default node      cmd>node filename.js
  * Purpose       :To deploy all the business logic.
@@ -29,11 +19,7 @@ var Utility = require('./Utility');
 class Node 
 {
 
-    /**
-     * 
-     * Node has to variable data,next.Data will point to current data 
-     * and next will point to the next node. 
-     */
+    
     constructor(data) 
     {
         this.data = data;
@@ -278,29 +264,141 @@ class LinkedList
   }
 }
 
+/*******************************STACKED LINKEDLIST************************************** */
 
+class StackLinkedList {
 
+  constructor() {
+      this.size = 0
+      this.head = null;
+  }
+  size() {
 
+      return this.size
+  }
+  isEmpty() {
+      /**
+       * Condition to check the size is zero.
+       */
+      return top == null;
+  }
+  push(data) {
+      var n = new Node(data)
+      if (this.head == null) {
+          this.head = n
+          this.size++
+      }
+      else {
+          var temp = this.head
+          while (temp.next) {
+              temp = temp.next
+          }
+          temp.next = n
+          this.size++
+      }
+  }
+  pop() {
+      if (this.head == null) {
+          console.log("Stack underflow");
+          return null;
+      }
+      var curr = this.head;
+      var pre = this.head;
+      if (curr.next == null) {
+          this.head = null;
+          return curr.data;
+      }
+      while (curr.next) {
+          pre = curr;
+          curr = curr.next;
+      }
+      var data = curr.data
+      pre.next = null;
+      this.size--;
+      return data;
+  }
+  peek() {
+      // check for empty stack 
+      if (!isEmpty()) {
+          return high.data;
+      }
+      else {
+          console.log("Stack empty");
+          return -1;
+      }
+  }
+  print() 
+  {
+      var st = ""
+      var temp = this.head
+      while (temp) 
+      {
+          //console.log(temp.data)
+          st = st + " " + temp.data
+          temp = temp.next
+      }
+      return st;
+  }
 
-
-
-
-
-
-
-
-
-
+  printShares()
+  {
+      var arr = [];
+      if (this.head == null) 
+      {
+        return null;
+      } else 
+      {
+        var temp = this.head;
+        while (temp) 
+        {
+          arr.push(temp.data);
+          temp = temp.next;
+        }
+        return arr;
+      }
+    }
+    removeStock(element) 
+    {
+      var temp = this.head;
+      var prev = null;
+  
+      // iterate over the list
+      while (temp != null) 
+      {
+        // comparing element & if found then remove
+        var stock = temp.data;
+        if (stock.name == element || stock.symbol == element) 
+        {
+          if (prev == null) 
+          {
+            this.head = temp.next;
+          } else 
+          {
+            prev.next = temp.next;
+          }
+          /**
+           * To decrement the size of the LinkedList
+           */
+          this.size--;
+          return temp.data;
+        }
+        prev = temp;
+        temp = temp.next;
+      }
+      return -1;
+    }
+  }
 
 
 /*****************************STACK***************************************************** */
-  class Stack 
+  
+class Stack 
   {
       constructor() 
       {
           this.item = [];
           this.capacity;
-          this.top = -1;
+          this.head = -1;
           this.size = 0;
       }
       size() 
@@ -322,18 +420,18 @@ class LinkedList
       
        push(data)  
         {
-          if (this.top == this.capacity - 1) 
+          if (this.head == this.capacity - 1) 
           {
               console.log("stack overflow");
               return;
           }
           this.size++;
-          this.item[++this.top] = data;
+          this.item[++this.head] = data;
         }
   
       pop() 
       {
-          if (this.top == this.capacity - 1)
+          if (this.head == this.capacity - 1)
               console.log("Stack is empty");
           this.size--;
           return this.item.pop();
@@ -341,7 +439,7 @@ class LinkedList
   
       peek() 
       {
-          if (this.top = -1) 
+          if (this.head = -1) 
           {
               console.log("Stack is empty");
           }
@@ -361,9 +459,59 @@ class LinkedList
             }
             return str;
         }
+      
+      printShares()
+      {
+        var arr = [];
+        if (this.head == null) 
+        {
+          return null;
+        } else 
+        {
+          var temp = this.head;
+          while (temp) 
+          {
+            arr.push(temp.data);
+            temp = temp.next;
+          }
+          return arr;
+        }
       }
+      /**
+       * To remove the share from the stock
+       * @param {any} element 
+       */
+      removeStock(element) 
+      {
+        var temp = this.head;
+        var prev = null;
     
-
+        // iterate over the list
+        while (temp != null) 
+        {
+          // comparing element & if found then remove
+          var stock = temp.data;
+          if (stock.name == element || stock.symbol == element) 
+          {
+            if (prev == null) 
+            {
+              this.head = temp.next;
+            } else 
+            {
+              prev.next = temp.next;
+            }
+            /**
+             * To decrement the size of the LinkedList
+             */
+            this.size--;
+            return temp.data;
+          }
+          prev = temp;
+          temp = temp.next;
+        }
+        return -1;
+      }
+    }
 /****************************Banking Cash Counter*************************************** */
 
 class Queue
@@ -574,6 +722,52 @@ class Queue1
       return str;
      }
    }
+
+  printShares()
+  {
+    var arr = [];
+    if (this.head == null) {
+      return null;
+    } else {
+      var temp = this.head;
+      while (temp) {
+        arr.push(temp.data);
+        temp = temp.next;
+      }
+      return arr;
+    }
+  }
+  /**
+   * To remove the share from the stock
+   * @param {any} element 
+   */
+
+  removeStock(element) 
+  {
+    var temp = this.head;
+    var prev = null;
+
+    // iterate over the list
+    while (temp != null) {
+      // comparing element & if found then remove
+      var stock = temp.data;
+      if (stock.name == element || stock.symbol == element) {
+        if (prev == null) {
+          this.head = temp.next;
+        } else {
+          prev.next = temp.next;
+        }
+        /**
+         * To decrement the size of the LinkedList
+         */
+        this.size--;
+        return temp.data;
+      }
+      prev = temp;
+      temp = temp.next;
+    }
+    return -1;
+  }
 }
 
 /**************************Palindrome*************************************************8
@@ -870,9 +1064,7 @@ class LinkedListQueue {
       } else {
           let itemToPop = this.head;
           this.head = this.head.next;
-          
-          
-          return itemToPop;
+          return itemToPop.data;
       }
   }
   /**
@@ -903,6 +1095,51 @@ class LinkedListQueue {
       }
       return st;
   }
+  printShares()
+  {
+    var arr = [];
+    if (this.head == null) {
+      return null;
+    } else {
+      var temp = this.head;
+      while (temp) {
+        arr.push(temp.data);
+        temp = temp.next;
+      }
+      return arr;
+    }
+  }
+  /**
+   * To remove the share from the stock
+   * @param {any} element 
+   */
+
+  removeStock(element) 
+  {
+    var temp = this.head;
+    var prev = null;
+
+    // iterate over the list
+    while (temp != null) {
+      // comparing element & if found then remove
+      var stock = temp.data;
+      if (stock.name == element || stock.symbol == element) {
+        if (prev == null) {
+          this.head = temp.next;
+        } else {
+          prev.next = temp.next;
+        }
+        /**
+         * To decrement the size of the LinkedList
+         */
+        this.size--;
+        return temp.data;
+      }
+      prev = temp;
+      temp = temp.next;
+    }
+    return -1;
+  }
 }
 
 
@@ -929,6 +1166,7 @@ module.exports = { LinkedList,
   LinkedListQueue, 
   Queue1,
   Queue2,
+  StackLinkedList,
 
 
 getBinaryTree(num)

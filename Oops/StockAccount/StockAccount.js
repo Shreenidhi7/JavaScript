@@ -210,6 +210,7 @@ var file = require("fs");
 //var  M = require('../../Utility/utilityDataStructure');
 //var linkedList = new M.LinkedList();
 class StockAccount {
+  
   constructor(customerDataJson, companyDataJson) 
   {
     this.customerDataJson = customerDataJson;

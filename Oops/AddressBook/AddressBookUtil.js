@@ -1,12 +1,12 @@
 var read = require('readline-sync');
 var file = require('fs');
-nameRestriction = /[a-z]/ig;
-contactRestriction = /[0-9]/g;
 /**
- * Add new entries each time and manage that address book and perform opeartions like add,delete,
- * search,update and sort information.
- * @param person store the info of each person and perform opeartions.
- */
+* regex
+*/
+nameRestriction = /[a-zA-Z]/ig;
+contactFormat = /[0-9]/g;
+
+
 class Address {
     /**
      * create a constructor to initialize and store values
@@ -139,7 +139,7 @@ class Address {
                             switch (parseInt(choice3)) {
                                 case 1:
                                     var sUpdate = read.question("Enter the new street number: ");
-                                    if (nameRestriction.test(sUpdate) == false && sUpdate.length > 3) {
+                                    if (nameRestriction.test(sUpdate) == false && sUpdate.length > 10) {
                                         console.log("Invalid name!");
                                         return false;
                                     }

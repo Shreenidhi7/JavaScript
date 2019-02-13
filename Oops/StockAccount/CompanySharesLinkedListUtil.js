@@ -63,7 +63,7 @@ class CompanyShares
      * Display the elements in the list after adding
      */
     console.log("Elements after adding to the list :");
-    console.log(this.linkedList.printShares());
+    console.log(this.linkedList.printShares);
   }
   /**
    * Function to remove the element from the list

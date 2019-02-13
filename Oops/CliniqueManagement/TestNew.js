@@ -1,184 +1,35 @@
-var read=require('readline-sync')
-var Utility=require('../../Utility/Utility')
-class Doctors{
-    constructor(){
+/************************************************************
+ * Execution    :   1. cmd> node clinicManagement.js
+ *                   if nodemon is installed:
+ *                  2. cmd> nodemon clinicManagement.js
+ *                   nodemon helps in restart the program after every changes.
+ * 
+ * Purpose      :   To add and edit all the details of the patients and
+ *                  doctors into the file and giving appontment to the patient.
+ * 
+ * @description :   clinicManagement is used to manage a list of Doctors associated with the Clinique. This also manages the list of patients who use the
+                    clinique. It manages Doctors by Name, Id, Specialization and Availability (AM, PM orboth). It manages Patients by Name, ID, Mobile Number and Age. The Program allows
+                    users to search Doctor by name, id, Specialization or Availability. Also the programs allows users to search patient by name, mobile number or id. The programs allows
+                    patients to take appointment with the doctor
+ *                  
+ * @file        :   clinicManagement.js
+ * @overview    :   To add and edit all the details of the patients and doctors.
+ * @author      :   Shreenidhi Sharma N <shreenidhisharma7@gmail.com>
+ * @version     :   1.0
+ * @since       :   13/02/2019
+ * 
+ * **********************************************************/
+var read = require('readline-sync')
+var access = require('../CliniqueManagement/TestUtil')
+var file = require('fs')
+function clinicManagement() {
+    try {
+        var data = file.readFileSync('clinic.json', 'utf8')
+        var object = JSON.parse(data)
+        var obj = new access.clinic;
+        obj.clinicManagement(object);
+    } catch (err) {
+        console.log(err.message);
 
     }
-    searchDoctor(data){
-        var doctors=data.Doctors
-        var number=read.questionInt("Enter \n 1 to search Doctor by Name \n 2.by Id \n 3.by Specialization:")
-        if(number==1)
-        {
-            var name1=read.question("Enter Doctor name:")
-            for (const key in doctors) {
-                if(doctors[key].Name==name1)
-                {
-                    console.log("-------Your Doctor Information is-------")
-                    console.log(doctors[key])
-                    console.log("-----------------------------------------")
-
-                }
-              
-            }
-
-        }
-        if(number==2)
-        {
-            var Id1=read.question("Enter Doctor Id:")
-            for (const key in doctors) {
-                if(doctors[key].Id==Id1)
-                {
-                    console.log("-------Your Doctor Information is-------")
-                    console.log(doctors[key])
-                    console.log("-----------------------------------------")
-
-                }
-              
-            }
-
-        }
-        if(number==3)
-        {
-            var sp=read.question("Enter Doctor Specialization:")
-            for (const key in doctors) {
-                if(doctors[key].Specialization==sp)
-                {
-                    console.log("-------Your Doctor Information is-------")
-                    console.log(doctors[key])
-                    console.log("-----------------------------------------")
-
-                }
-              
-            }
-
-        }
-
-    }
-    appointment(data)
-    {
-        var patient=data.Patient
-        var doctors=data.Doctors
-        var arrdr=[]
-        var arr11=[]
-            var arrpa=[]
-            var arrtime=[]
-            console.log("Doctors list is:")
-            for (const key in doctors) {
-                arr11.push(doctors[key].Name)
-            }
-            console.log(arr11)
-            var c=0
-            for (const key in patient) {
-                var drname=""
-                var namedr=read.question(patient[key].Name+" Enter Doctor Name you want take appointment:")
-                  for(let key=0;key<2;key++)
-                  {
-                    if(doctors[key].Name==namedr)
-                    {
-                        arrdr.push(doctors[key].Name)
-                        arrtime.push(doctors[key].Availability)
-                       var n= doctors[key].Numberofappointmaent
-                       
-                       
-                       
-                    }
-                
-                }
-               
-                arrpa.push(patient[key].Name)
-                c++
-            }
-            console.log()
-            console.log("slno"+" Doctor Name   Patient Name   Availability Time")
-            for(let i=0;i<c;i++)
-            {
-             console.log(i+1+"    "+arrdr[i]+"       "+arrpa[i]+"          "+arrtime[i])   
-            }
-           
-            var arrc=[]
-            for(let i=0;i<doctors.length;i++){
-                var c=0
-                arrc.push([])
-                for(let j=0;j<arrdr.length;j++)
-                {
-                    if(doctors[i].Name==arrdr[j])
-                    {
-                        c++;
-                    }
-                }
-                var s=""+c+doctors[i].Name
-                if(!arrc.includes(s))
-                {
-                arrc.push(s)
-                }
-
-            }
-            console.log()
-          var sortarr=Utility.generateBubbleSort(arrc)
-          var st=sortarr[sortarr.length-1]
-          var st1=st.substring(1, st.length);
-
-          console.log(" popular Doctor is:"+st1)
-            
-
-        }
-    }
-   
-
-
-    
-
-class Patient{
-    constructor(){}
-    searchpatient(data){
-        var patient=data.Patient
-        var number1=read.questionInt("Enter \n 1 to search patient by Name \n 2.by Id \n 3.by mobilenumber:")
-            if(number1==1)
-            {
-                var name1=read.question("Enter patient name:")
-                for (const key in patient) {
-                    if(patient[key].Name==name1)
-                    {
-                        console.log("-------Your patient Information is-------")
-                        console.log(patient[key])
-                        console.log("-----------------------------------------")
-
-                    }
-                  
-                }
-
-            }
-            if(number1==2)
-            {
-                var Id1=read.question("Enter patient Id:")
-                for (const key in patient) {
-                    if(patient[key].Id==Id1)
-                    {
-                        console.log("-------Your patient Information is-------")
-                        console.log(patient[key])
-                        console.log("-----------------------------------------")
-
-                    }
-                  
-                }
-
-            }
-            if(number1==3)
-            {
-                var mobilenumber1=read.question("Enter patient mobilenumber:")
-                for (const key in patient) {
-                    if(patient[key].mobilenumber==mobilenumber1)
-                    {
-                        console.log("-------Your patient Information is-------")
-                        console.log(patient[key])
-                        console.log("--------------------------------------------------------------")
-
-                    }
-                  
-                }
-
-    }
-}
-}
-module.exports={Doctors,Patient
-}
+} clinicManagement();
