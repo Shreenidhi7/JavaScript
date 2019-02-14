@@ -40,6 +40,8 @@ class companySharesStack {
     } while (!flag);
     var share = read.questionInt("Enter the share :");
     var price = read.questionInt("Enter the price :");
+    var d=new Date();
+    var date=d.toString();
 
     /**
      * Access all the data provided by user and add push it to the stack
@@ -48,7 +50,8 @@ class companySharesStack {
       name: name,
       symbol: symbol,
       share: share,
-      price: price
+      price: price,
+      date:date
     });
     /**
      * Display the elements in the stack after adding

@@ -1,1 +1,21 @@
-[{"name":"wipro","symbol":"wi","share":5,"price":23000},{"name":"google","symbol":"g","share":6,"price":233443}]
+[
+    {
+        "name": "wipro",
+        "symbol": "wi",
+        "share": 5,
+        "price": 23000
+    },
+    {
+        "name": "google",
+        "symbol": "g",
+        "share": 6,
+        "price": 233443
+    },
+    {
+        "name": "shri",
+        "symbol": "&",
+        "share": 4,
+        "price": 1234,
+        "date": "Thu Feb 14 2019 10:16:53 GMT+0530 (IST)"
+    }
+]

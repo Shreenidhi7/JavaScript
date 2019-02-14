@@ -1098,11 +1098,14 @@ class LinkedListQueue {
   printShares()
   {
     var arr = [];
-    if (this.head == null) {
+    if (this.head == null) 
+    {
       return null;
-    } else {
+    } else 
+    {
       var temp = this.head;
-      while (temp) {
+      while (temp) 
+      {
         arr.push(temp.data);
         temp = temp.next;
       }

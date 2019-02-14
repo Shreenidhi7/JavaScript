@@ -1,15 +1,17 @@
 var read = require("readline-sync");
 var file = require("fs");
 var accessDs = require("../../Utility/UtilityDS");
-class CompanySharesQueue {
-    constructor() {
+class CompanySharesQueue 
+{
+    constructor() 
+    {
         this.Queue = new accessDs.LinkedListQueue;
         try {
             /**
              * Pass the path of json file and read it and push the objects using add method of stack
              */
             this.data = JSON.parse(
-                file.readFileSync("CompanySharesQueue.json")
+                file.readFileSync("CompanySharesQueue1.json")
             );
             console.log(this.data);
 
@@ -40,6 +42,8 @@ class CompanySharesQueue {
         } while (!flag);
         var share = read.questionInt("Enter the share :");
         var price = read.questionInt("Enter the price :");
+        var d=new Date();
+        var date=d.toString();
 
         /**
          * Access all the data provided by user and add push it to the stack
@@ -48,7 +52,8 @@ class CompanySharesQueue {
             name: name,
             symbol: symbol,
             share: share,
-            price: price
+            price: price,
+            date: date
         });
         /**
          * Display the elements in the stack after adding
