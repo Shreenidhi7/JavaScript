@@ -119,7 +119,7 @@ class clinic {
                 var name = readline.question('Enter the name of the doctor :')
                 while (!this.getNameFromDoctor(object).includes(name)) {//if the array includes the user giventotalCountame ony that time it will remove 
                     console.log('Enter the valid name :')
-                    name = readline.question('Enter the name you want to search :')
+                    name = readline.question('Enter the name  you want to search :')
                 }
                 for (let key in doctor) {
                     if (doctor[key].name == name) {

@@ -105,22 +105,6 @@
             "age": 24,
             "appointmentFrom": "Dr.Kanchana",
             "onTheDayOf": 15
-        },
-        {
-            "name": "shri",
-            "Id": 82854,
-            "phoneNumber": 9876543210,
-            "age": 22,
-            "appointmentFrom": "DR.Prasad gudde",
-            "onTheDayOf": 16
-        },
-        {
-            "name": "bhavana",
-            "Id": 53947,
-            "phoneNumber": 7874545455,
-            "age": 45,
-            "appointmentFrom": "Dr.Kanchana",
-            "onTheDayOf": 16
         }
     ]
 }
