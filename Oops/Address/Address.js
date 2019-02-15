@@ -27,11 +27,11 @@ class Address
 */
 
 //var D=require('../../ObjectOrientedPrograms/Oppsutility')
-var M=require('../../Oops/Address/AddressUtil')
+var Utility=require('../../Oops/Address/AddressUtil')
 var file=require('fs')
 var data1=file.readFileSync('Address.json','utf8')
 var data=JSON.parse(data1)
-var manager=new M.AddressbookManager
+var manager=new Utility.AddressBookManager
 //var object=new M.AddressBook
 //manager.newAddressBook(data)
-manager
+
