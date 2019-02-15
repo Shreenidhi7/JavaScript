@@ -164,6 +164,7 @@ class Doctor
     {
         var Doctor1=new Clinic;
         var doctor=data.Doctor
+       // var doctor = object.Doctor;
         var numbers=readline.questionInt("enter \n 1 to search Doctor by name \n 2 by ID \n 3 by Specialization: ")
 
         if(numbers==1)
@@ -172,6 +173,12 @@ class Doctor
             console.log(Doctor1.getNameFromDoctor(data));
 
             var name1=readline.question("Enter Doctor Name: ")
+
+            while(!Doctor1.getNameFromDoctor(data).includes(name1))
+            {
+                console.log("enter valid name!!!")
+                name1=readline.question("enter the name of Doctor you want to search : ")
+            }
             for(const key in doctor)
             {
                 if(doctor[key].Name==name1)
@@ -188,6 +195,11 @@ class Doctor
             console.log("the Doctor ID's are :")
             console.log(Doctor1. getIdFromDoctor(data));
             var Id1=readline.question("Enter Doctor ID: ");
+            while(!Doctor1.getIdFromDoctor(data).includes(Id1))
+            {
+                console.log("enter valid Id!!!!");
+                Id1=readline.question("Enter the correct ID of doctor to search: ")
+            }
             for(const key in doctor)
             {
                 if(doctor[key].Id==Id1)
@@ -205,6 +217,13 @@ class Doctor
             console.log(Doctor1.getSpecialisationFromDoctor(data));
             
             var sp=readline.question("Enter Doctor Specilization: ")
+            while(!Doctor1.getSpecialisationFromDoctor(data).includes(sp))
+            {
+                console.log("Enter Valid Specilization!!!");
+                sp=readline.question("Enter Correct Specilization of Doctor : ");
+                
+            }
+
             for(const key in doctor)
             {
                 if(doctor[key].Specialisation==sp)

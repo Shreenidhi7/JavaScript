@@ -1,27 +1,28 @@
 {
     "Person": [
         {
-            "personfname": "MSS",
-            "personlname": "SWAMY",
-            "city": "KADUR",
+            "personfname": "Shreenidhi",
+            "personlname": "Sharma",
+            "city": "Bangalore",
             "state": "KA",
-            "zip": "577140",
-            "phonenumber": "9972421973"
+            "zip": "560054",
+            "phonenumber": "7259507217"
         },
         {
-            "personfname": "AAAAAA",
-            "personlname": "",
-            "city": "",
-            "state": "",
-            "zip": "1000",
-            "phonenumber": ""
+            "personfname": "Aurbindo",
+            "personlname": "Gosh",
+            "city": "Kolkata",
+            "state": "Bengal",
+            "zip": "12123",
+            "phonenumber": "9639639639"
         },
         {
-            "personfname": "shiva",
-            "personlname": "s",
-            "phonenumber": "9",
-            "city": "s",
-            "state": "s"
+            "personfname": "Nissar",
+            "personlname": "Ahamed",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "zip":"12300",
+            "phonenumber": "7417417417"
         },
         {
             "personfname": "zzzzzzzzzzzzzzzzzz",
