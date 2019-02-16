@@ -30,6 +30,19 @@ if(num==4)
 
 
 */
+/**************************************************************************
+ * Execution        : Default node             cmd> node Commercial.js
+ * @file            : Commercial.js
+ * @overview        :  The StockAccount class also maintains a list of CompanyShares object which has Stock Symbol and 
+     Number of Shares as well as DateTime of the transaction. 
+     When buy or sell is initiated StockAccount checks if CompanyShares are available
+     and accordingly update or create an Object.
+
+ * @author          : Shreenidhi Sharma N  <shreenidhisharma7@gmail.com>
+ * @version         : 1.0.
+ * @since           : 15/02/2019
+ ***************************************************************************/
+
 var D = require("../StockAccount/StockAccount");
 var read = require("readline-sync");
 var file = require("fs");

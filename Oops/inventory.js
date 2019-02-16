@@ -1,3 +1,14 @@
+/**************************************************************************
+ * Execution        : Default node             cmd> node inventory.js
+ * @file            : inventory.js
+ * @overview        : Create a JSON file having Inventory Details for Rice, Pulses and Wheats
+                      with properties name, weight, price per kg. 
+                     Create Inventory Object from JSON. Calculate the value for every Inventory. 
+ * @author          : Shreenidhi Sharma N  <shreenidhisharma7@gmail.com>
+ * @version         : 1.0.
+ * @since           : 13/02/2019
+ ***************************************************************************/
+
 var fileStream=require('fs');
 var UtilityOops=require('../Utility/UtilityOops');
 

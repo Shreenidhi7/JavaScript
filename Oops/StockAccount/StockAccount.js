@@ -203,7 +203,15 @@ class Companyshares{
 module.exports={StockAccount,Companyshares}
 
 */
-
+/**************************************************************************
+ * Execution        : Default node             cmd> node StockAccount.js
+ * @file            : StockAccount.js
+ * @overview        :  StockAccount.java implements a data type that
+  might be used by a financial institution to keep track of customer information. 
+ * @author          : Shreenidhi Sharma N  <shreenidhisharma7@gmail.com>
+ * @version         : 1.0.
+ * @since           : 15/02/2019
+ ***************************************************************************/
 
 var read = require("readline-sync");
 var file = require("fs");

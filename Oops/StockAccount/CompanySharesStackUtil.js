@@ -1,9 +1,9 @@
 var read = require("readline-sync");
 var file = require("fs");
-var accessDs = require("../../Utility/UtilityDS");
+var UtilityDS = require("../../Utility/UtilityDS");
 class companySharesStack {
   constructor() {
-    this.stack = new accessDs.StackLinkedList;
+    this.stack = new UtilityDS.StackLinkedList;
     try {
       /**
        * Pass the path of json file and read it and push the objects using add method of stack

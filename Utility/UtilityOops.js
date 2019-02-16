@@ -71,7 +71,7 @@ class Pulses extends Items
 }
 
 
-/***************************STOCK******************************************************** */
+/***************************STOCK****************************************************************** */
 
 class Stock {
     constructor(name, numberofshare, shareprice) {
@@ -146,7 +146,7 @@ class inventoryManage {
         var d = file.writeFileSync('StockReport.json', JSON.stringify(data))
     }
 }
-
+/*****************************DECK OF CARDS********************************************************* */
 /*
 class Deck
 {
@@ -181,6 +181,7 @@ class Deck
 
 */
 
+/*************************************************************************************************** */
 
 class Card
 {
@@ -235,30 +236,7 @@ class Deck
         return cardarr;
     }
         
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+}    
 /****************************Address Book************************************************* */
 
 var read = require('readline-sync');
@@ -621,7 +599,7 @@ class Address {
 }
 //module.exports = { Address }
 
-
+/*******************DECK OF CARDS LINKED LIST*************************************************************** */
 
 
 class Player
@@ -641,35 +619,6 @@ class Player
     }
 }
 //module.exports = { Player };
-
-
-
-
-
-class Regex
-{
-    constructor()
-    {
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**********************************String Replace**************************************** */
 module.exports = {

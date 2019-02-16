@@ -276,9 +276,15 @@ class Doctor
             console.log("----------------Doctors available are------------")
             console.log(Clinic1.getNameFromDoctor(data))
             var appointmentFrom = readline.question('Enter the doctor name from you want to take appointment :')
+            while(!Clinic1.getNameFromDoctor(data).includes(appointmentFrom))
+            {
+                console.log("Enter Valid Name of Doctor!!!!");
+                appointmentFrom=readline.question("Enter Doctors Name ::")
+                
+            }
             patient.push({
                 "Name": name,
-                "Id": Id,
+                "Id": ""+Id,
                 "PhoneNumber": PhoneNumber,
                 "Age": age,
                 "AppointmentFrom": appointmentFrom,
@@ -310,7 +316,12 @@ class Doctor
                 console.log(Patient1.getNameFromPatient(data))
                 
                 var name1=readline.question("Enter Patient Name: ")
-                for(const key in patient)
+                while(!Patient1.getNameFromPatient(data).includes(name1))
+                {
+                    console.log("Enter Vaild Patient Name!!!");
+                    var name1=readline.question("Enter Name Of Patient To Search: ");     
+                }
+                  for(const key in patient)
                 {
                     if(patient[key].Name==name1)
                     {
@@ -328,8 +339,13 @@ class Doctor
             {
                 console.log("The Patients ID are :");
                 console.log(Patient1.getIdFromPatient(data) );
-                var Id1=readline.question("Enter Patient ID: ")
-                for(const key in patient)
+                var Id1=""+readline.question("Enter Patient ID: ")
+                while(!Patient1.getIdFromPatient(data).includes(Id1))
+                {
+                    console.log("Enter Valid Patient ID!!!");
+                    var Id1=""+readline.question("Enter Patients ID you want to Search: ");
+                }
+                for(var key in patient)
                 {
                     if(patient[key].Id==Id1)
                     {
@@ -345,7 +361,13 @@ class Doctor
             {
                 console.log("The Patient PhoneNumbers are: ");
                 console.log(Patient1.getPhoneNumberFromPatient(data));
-                var phoneNumber1=readline.question("Enter Patient MobileNumber: ")
+                var phoneNumber1=readline.questionInt("Enter Patient MobileNumber: ")
+                while(!Patient1.getPhoneNumberFromPatient(data).includes(phoneNumber1))
+                {
+                    console.log("Enter Valid PhoneNumber!!!");
+                    var phoneNumber1=readline.questionInt("Enter the PhoneNumber of the Patient to Search: ");
+                }
+                
                 for(const key in patient)
                 {
                     if(patient[key].PhoneNumber==phoneNumber1)
